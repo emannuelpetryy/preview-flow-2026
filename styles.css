@@ -1,0 +1,2099 @@
+/* ==========================================================================
+   REDE DOUTOR HÉRNIA - MASTER LANDING PAGE SYSTEM 2026
+   Direção de Arte: Alto Padrão Clínico, CRO Avançado e Wix Studio Ready
+   Paleta Oficial: Azul Royal #1663DE, Azul Base #09295E, Azul Noite #061A3B
+   ATENÇÃO: Proibido o uso de vermelho nos botões/CTAs conforme diretriz direta.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. TIPOGRAFIA OFICIAL: LUFGA (5 PESOS)
+   -------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'Lufga';
+  src: url('./assets/fonts/LufgaRegular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lufga';
+  src: url('./assets/fonts/LufgaMedium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lufga';
+  src: url('./assets/fonts/LufgaSemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lufga';
+  src: url('./assets/fonts/LufgaBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lufga';
+  src: url('./assets/fonts/LufgaBlack.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --------------------------------------------------------------------------
+   2. DESIGN TOKENS & PALETA DE CORES OFICIAL
+   -------------------------------------------------------------------------- */
+:root {
+  /* Cores Oficiais da Marca e CTAs (AZUL REAL CONFORME ORIENTAÇÃO DO USUÁRIO) */
+  --color-primary-cta: #1663DE;        /* Ação Principal / WhatsApp (Azul Royal) */
+  --color-primary-cta-hover: #09295E;  /* Hover CTA (Azul Institucional Escuro) */
+  --color-blue-base: #09295E;          /* Base Institucional */
+  --color-blue-night: #061A3B;         /* Azul Noite / Títulos Escuros */
+  --color-blue-royal: #1663DE;         /* Realces e Badges Principais */
+  --color-blue-medium: #2C5391;        /* Azul Médio de Apoio */
+  --color-neutral-gray: #606062;       /* Apoio Neutro / Legendas */
+  --color-ice-blue: #E5EFFF;           /* Fundos e Badges Suaves */
+  --color-pastel-blue: #ADCAF7;        /* Bordas e Divisores Sutis */
+
+  /* Cores Complementares Neutras */
+  --color-white: #FFFFFF;
+  --color-page-bg: #F8FAFD;
+  --color-card-bg: #FFFFFF;
+  --color-text-dark: #061A3B;
+  --color-text-body: #334155;
+  --color-text-muted: #64748B;
+  --color-border-card: rgba(173, 202, 247, 0.45);
+  --color-border-subtle: #E2E8F0;
+
+  /* Status e Sucesso */
+  --color-status-green: #10B981;
+  --color-status-green-bg: rgba(16, 185, 129, 0.12);
+
+  /* Tipografia */
+  --font-family: 'Lufga', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Sombras Nobres e Profundidade (Tons Azuis Clínicos) */
+  --shadow-subtle: 0 2px 8px rgba(9, 41, 94, 0.04);
+  --shadow-card: 0 8px 24px -4px rgba(9, 41, 94, 0.08), 0 2px 6px rgba(9, 41, 94, 0.04);
+  --shadow-card-hover: 0 16px 36px -6px rgba(9, 41, 94, 0.14), 0 4px 12px rgba(9, 41, 94, 0.06);
+  --shadow-float: 0 16px 36px -6px rgba(9, 41, 94, 0.14), 0 4px 12px rgba(9, 41, 94, 0.06);
+  --shadow-cta: 0 10px 25px -3px rgba(22, 99, 222, 0.35), 0 4px 10px rgba(22, 99, 222, 0.18);
+  --shadow-cta-hover: 0 14px 30px -2px rgba(9, 41, 94, 0.45), 0 6px 14px rgba(9, 41, 94, 0.25);
+
+  /* Transições e Curvas */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+  --transition-fast: 0.18s ease-in-out;
+  --transition-smooth: 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Largura Máxima Container */
+  --max-w-screen: 1240px;
+  --max-w-narrow: 880px;
+}
+
+/* --------------------------------------------------------------------------
+   3. RESET E CONFIGURAÇÕES GERAIS
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-page-bg);
+  color: var(--color-text-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-smooth);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* --------------------------------------------------------------------------
+   4. WIX STUDIO READY - LAYOUT & STACK PRIMITIVES
+   -------------------------------------------------------------------------- */
+.wix-section {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wix-container {
+  width: 100%;
+  max-width: var(--max-w-screen);
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+.max-w-narrow {
+  max-width: var(--max-w-narrow);
+}
+
+.section-padding {
+  padding-top: 52px;
+  padding-bottom: 52px;
+}
+
+.wix-stack-h {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* Cabeçalhos de Seção Centralizados */
+.section-header-center {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-ice-blue);
+  color: var(--color-blue-royal);
+  border: 1px solid rgba(173, 202, 247, 0.6);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+}
+
+.section-title {
+  font-size: clamp(1.85rem, 2.8vw, 2.45rem);
+  font-weight: 700;
+  color: var(--color-blue-night);
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  font-weight: 400;
+  max-width: 620px;
+}
+
+/* --------------------------------------------------------------------------
+   5. TOOLBAR WIX STUDIO CMS (FLUTUANTE & DISCRETA)
+   -------------------------------------------------------------------------- */
+.wix-cms-toolbar {
+  position: fixed;
+  bottom: 20px;
+  left: 24px;
+  z-index: 1000;
+  max-width: 440px;
+  background: rgba(6, 26, 59, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(173, 202, 247, 0.3);
+  border-radius: var(--radius-full);
+  padding: 6px 14px;
+  box-shadow: 0 10px 25px rgba(6, 26, 59, 0.25);
+  transition: var(--transition-smooth);
+}
+
+.wix-cms-toolbar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(6, 26, 59, 0.35);
+}
+
+.wix-cms-toolbar-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cms-status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.74rem;
+  color: #CBD5E1;
+}
+
+.cms-collection-pill {
+  font-size: 0.74rem;
+  color: #CBD5E1;
+}
+
+.cms-live-badge {
+  background: var(--color-blue-royal);
+  color: var(--color-white);
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cms-toggle-btn {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 600;
+  transition: var(--transition-fast);
+}
+
+.cms-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   6. HEADER OFICIAL DA LANDING PAGE
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(173, 202, 247, 0.35);
+  box-shadow: var(--shadow-subtle);
+  width: 100%;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  gap: 20px;
+}
+
+.header-left-stack {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.brand-logo-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.brand-logo-img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+}
+
+.header-vertical-divider {
+  width: 1px;
+  height: 26px;
+  background-color: var(--color-pastel-blue);
+  opacity: 0.65;
+}
+
+.unit-dynamic-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--color-ice-blue);
+  border: 1px solid var(--color-pastel-blue);
+  padding: 5px 13px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-blue-base);
+  letter-spacing: 0.02em;
+  max-width: 280px;
+}
+
+.unit-icon-pin {
+  width: 14px;
+  height: 14px;
+  color: var(--color-blue-royal);
+  flex-shrink: 0;
+}
+
+.unit-name-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  max-width: 220px;
+}
+
+.header-right-stack {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hours-info-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--color-text-body);
+  background: #F1F5F9;
+  border: 1px solid var(--color-border-subtle);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+}
+
+.hours-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-status-green);
+  box-shadow: 0 0 0 3px var(--color-status-green-bg);
+}
+
+/* CTA Header em Azul Royal Oficial */
+.btn-header-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--color-blue-royal);
+  border: 1.5px solid var(--color-blue-royal);
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.84rem;
+  font-weight: 700;
+  transition: var(--transition-smooth);
+}
+
+.btn-header-cta:hover {
+  background: var(--color-blue-royal);
+  color: var(--color-white);
+  box-shadow: 0 4px 14px rgba(22, 99, 222, 0.25);
+  transform: translateY(-1px);
+}
+
+.btn-header-cta .icon-wpp {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+}
+
+/* --------------------------------------------------------------------------
+   7. BLOCO 1: HERO BANNER REFINADO (DOBRA 1)
+   Texto enxuto, tipografia equilibrada, foto limpa, CTA em Azul
+   -------------------------------------------------------------------------- */
+.hero-block {
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  padding-top: 36px;
+  padding-bottom: 40px;
+  background: radial-gradient(circle at 85% 15%, rgba(229, 239, 255, 0.75) 0%, rgba(248, 250, 253, 0) 55%),
+              linear-gradient(180deg, #FFFFFF 0%, #F8FAFD 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-block > .wix-container {
+  width: 100%;
+}
+
+.hero-bg-accent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(173, 202, 247, 0.22) 0%, rgba(229, 239, 255, 0.05) 65%, transparent 100%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 48px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-copy-column {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.hero-kicker-stack {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  align-self: flex-start;
+  background: var(--color-white);
+  border: 1px solid var(--color-pastel-blue);
+  padding: 5px 14px 5px 6px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 2px 8px rgba(9, 41, 94, 0.04);
+}
+
+.kicker-tag {
+  background: var(--color-blue-royal);
+  color: var(--color-white);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.kicker-context {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-blue-base);
+}
+
+/* Título H1 Mais Elegante e Proporcional */
+.hero-title {
+  font-size: clamp(2rem, 3.2vw, 2.65rem);
+  font-weight: 700;
+  line-height: 1.18;
+  color: var(--color-blue-night);
+  letter-spacing: -0.025em;
+}
+
+.hero-title-highlight {
+  color: var(--color-blue-royal);
+  position: relative;
+  display: inline-block;
+}
+
+/* Subtítulo de 2 Linhas Curtas e Escaneáveis */
+.hero-lead-text {
+  font-size: 1.05rem;
+  line-height: 1.58;
+  color: #475569;
+  font-weight: 400;
+  max-width: 560px;
+}
+
+/* Bloco CTA Principal em Azul Royal #1663DE */
+.hero-cta-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.btn-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+  background: linear-gradient(135deg, #1663DE 0%, #0D4DB2 100%);
+  color: var(--color-white);
+  padding: 14px 26px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-cta);
+  transition: var(--transition-smooth);
+  width: fit-content;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-hero-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+  transform: skewX(-22deg);
+  transition: 0.75s ease;
+}
+
+.btn-hero-primary:hover {
+  background: linear-gradient(135deg, #09295E 0%, #061A3B 100%);
+  box-shadow: var(--shadow-cta-hover);
+  transform: translateY(-2px);
+}
+
+.btn-hero-primary:hover::before {
+  left: 140%;
+}
+
+.cta-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--transition-fast);
+}
+
+.btn-hero-primary:hover .cta-icon-box {
+  background: rgba(255, 255, 255, 0.26);
+  transform: scale(1.05);
+}
+
+.cta-icon-box .icon-wpp {
+  width: 24px;
+  height: 24px;
+  fill: var(--color-white);
+}
+
+.cta-text-content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.cta-label-top {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-white);
+  letter-spacing: -0.01em;
+}
+
+.cta-label-sub {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #D8E4FA;
+  letter-spacing: 0.01em;
+}
+
+.hero-guarantee-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-neutral-gray);
+  padding-left: 4px;
+}
+
+.icon-shield {
+  width: 16px;
+  height: 16px;
+  color: var(--color-blue-royal);
+  flex-shrink: 0;
+}
+
+/* Mini Strip de Métricas */
+.hero-metrics-strip {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-top: 16px;
+  margin-top: 6px;
+  border-top: 1px solid rgba(173, 202, 247, 0.4);
+}
+
+.metric-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-number {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-blue-base);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.metric-label {
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: var(--color-neutral-gray);
+  margin-top: 2px;
+  line-height: 1.3;
+}
+
+.metric-sep {
+  width: 1px;
+  height: 32px;
+  background: var(--color-pastel-blue);
+  opacity: 0.5;
+}
+
+/* Coluna Visual e Foto Clínica Limpa */
+.hero-visual-column {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visual-canvas-card {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-xl);
+  background: var(--color-white);
+  padding: 10px;
+  border: 1px solid var(--color-border-card);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-smooth);
+}
+
+.visual-canvas-card:hover {
+  box-shadow: var(--shadow-float);
+  border-color: var(--color-pastel-blue);
+}
+
+.visual-img-container {
+  width: 100%;
+  height: 460px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--color-ice-blue);
+}
+
+.visual-clinical-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.visual-canvas-card:hover .visual-clinical-photo {
+  transform: scale(1.02);
+}
+
+.visual-bottom-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(180deg, transparent 0%, rgba(6, 26, 59, 0.65) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Única Pill Discreta na Base da Fotografia (Área Arejada) */
+.photo-discrete-pill {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(6, 26, 59, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(173, 202, 247, 0.35);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  color: #FFFFFF;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.photo-pill-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #60A5FA;
+  box-shadow: 0 0 6px #60A5FA;
+}
+
+/* Badge Flutuante Autoridade (+3 Milhões) */
+.floating-badge-authority {
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--color-white);
+  border: 1px solid var(--color-pastel-blue);
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-float);
+  animation: float-gentle 4.5s ease-in-out infinite;
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.badge-seal-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--color-ice-blue);
+  border: 1.5px solid var(--color-blue-royal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-blue-royal);
+  flex-shrink: 0;
+}
+
+.badge-seal-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.badge-authority-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.badge-stat-strong {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-blue-base);
+  line-height: 1.1;
+}
+
+.badge-stat-sub {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--color-neutral-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   8. DOBRA 2: O MÉTODO EXCLUSIVO EM 3 FASES
+   -------------------------------------------------------------------------- */
+.method-section {
+  background: #FFFFFF;
+  border-top: 1px solid rgba(173, 202, 247, 0.25);
+  border-bottom: 1px solid rgba(173, 202, 247, 0.25);
+}
+
+.phases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.phase-card {
+  background: #F8FAFD;
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--radius-lg);
+  padding: 32px 26px;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.phase-card:hover {
+  background: #FFFFFF;
+  border-color: var(--color-blue-royal);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+}
+
+.phase-card-highlight {
+  border-color: var(--color-blue-royal);
+  background: linear-gradient(180deg, #F0F6FF 0%, #FFFFFF 100%);
+  box-shadow: 0 8px 24px -4px rgba(22, 99, 222, 0.12);
+}
+
+.phase-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.phase-number-badge {
+  background: var(--color-ice-blue);
+  color: var(--color-blue-base);
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.05em;
+}
+
+.phase-number-badge.highlight {
+  background: var(--color-blue-royal);
+  color: var(--color-white);
+}
+
+.phase-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: #FFFFFF;
+  border: 1px solid var(--color-pastel-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-blue-royal);
+}
+
+.phase-icon-wrap.highlight {
+  background: var(--color-ice-blue);
+  border-color: var(--color-blue-royal);
+}
+
+.phase-icon {
+  width: 26px;
+  height: 26px;
+}
+
+.phase-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-blue-night);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.phase-desc {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   9. DOBRA 3: PATOLOGIAS TRATADAS SEM CIRURGIA
+   -------------------------------------------------------------------------- */
+.pathologies-section {
+  background: var(--color-page-bg);
+}
+
+.pathologies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.pathology-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+}
+
+.pathology-card:hover {
+  border-color: var(--color-blue-royal);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-3px);
+}
+
+.pathology-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: var(--color-ice-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.pathology-icon-box img {
+  width: 28px;
+  height: 28px;
+}
+
+.pathology-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-blue-night);
+  margin-bottom: 8px;
+}
+
+.pathology-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.52;
+}
+
+/* Strip de Ação Intermediária em Azul */
+.section-inline-cta-card {
+  margin-top: 48px;
+  background: linear-gradient(135deg, var(--color-blue-base) 0%, var(--color-blue-night) 100%);
+  border-radius: var(--radius-xl);
+  padding: 32px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  color: var(--color-white);
+  box-shadow: var(--shadow-float);
+}
+
+.inline-cta-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.inline-cta-desc {
+  font-size: 0.92rem;
+  color: #CBD5E1;
+  max-width: 580px;
+}
+
+.btn-section-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-blue-royal);
+  color: var(--color-white);
+  padding: 13px 24px;
+  border-radius: var(--radius-full);
+  font-size: 0.92rem;
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(22, 99, 222, 0.4);
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: var(--transition-smooth);
+}
+
+.btn-section-cta:hover {
+  background: #FFFFFF;
+  color: var(--color-blue-night);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+}
+
+.icon-wpp-sm {
+  width: 18px;
+  height: 18px;
+}
+
+/* --------------------------------------------------------------------------
+   10. DOBRA 4: POR QUE ESCOLHER A DOUTOR HÉRNIA
+   -------------------------------------------------------------------------- */
+.why-section {
+  background: #FFFFFF;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.why-card {
+  background: #F8FAFD;
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--radius-lg);
+  padding: 28px 22px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: var(--transition-smooth);
+}
+
+.why-card:hover {
+  background: #FFFFFF;
+  border-color: var(--color-blue-royal);
+  box-shadow: var(--shadow-card);
+  transform: translateY(-3px);
+}
+
+.why-stat-number {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--color-blue-royal);
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.why-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-blue-night);
+  margin-bottom: 6px;
+}
+
+.why-card-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.48;
+}
+
+/* Card Destaque dos Fundadores */
+.founders-spotlight-card {
+  background: #F8FAFD;
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: center;
+  box-shadow: var(--shadow-subtle);
+}
+
+.founders-img-wrap {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+}
+
+.founders-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.founders-text-wrap {
+  padding: 36px 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.founders-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-blue-royal);
+  letter-spacing: 0.06em;
+}
+
+.founders-title {
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--color-blue-night);
+  line-height: 1.25;
+}
+
+.founders-desc {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.founders-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.f-badge {
+  background: #FFFFFF;
+  border: 1px solid var(--color-pastel-blue);
+  color: var(--color-blue-base);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+}
+
+/* --------------------------------------------------------------------------
+   11. DOBRA 5: DEPOIMENTOS / PROVA SOCIAL (VÍDEOS DINÂMICOS CMS)
+   -------------------------------------------------------------------------- */
+.testimonials-section {
+  background: var(--color-page-bg);
+}
+
+.testimonials-video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.testimonial-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-subtle);
+  transition: var(--transition-smooth);
+}
+
+.testimonial-card:hover {
+  border-color: var(--color-blue-royal);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-3px);
+}
+
+.video-container {
+  width: 100%;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  background: #000000;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.testimonial-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.testimonial-stars {
+  color: #F59E0B;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.testimonial-quote {
+  font-size: 0.95rem;
+  color: var(--color-text-body);
+  font-style: italic;
+  line-height: 1.55;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.testimonial-patient-info {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--color-border-subtle);
+  padding-top: 12px;
+}
+
+.patient-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-blue-night);
+}
+
+.patient-case {
+  font-size: 0.76rem;
+  color: var(--color-neutral-gray);
+}
+
+/* --------------------------------------------------------------------------
+   12. DOBRA 6: UNIDADE LOCAL & NOSSA EQUIPE (WIX CMS 100% DINÂMICO)
+   -------------------------------------------------------------------------- */
+.unit-details-section {
+  background: #FFFFFF;
+}
+
+.unit-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+}
+
+.unit-info-card, .unit-team-card {
+  background: #F8FAFD;
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--radius-xl);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.unit-card-heading {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-blue-night);
+  border-bottom: 2px solid var(--color-ice-blue);
+  padding-bottom: 12px;
+}
+
+.unit-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.contact-icon-box {
+  font-size: 1.25rem;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1px solid var(--color-pastel-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-label {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--color-neutral-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.contact-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-blue-night);
+  margin-top: 2px;
+}
+
+.btn-maps-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #FFFFFF;
+  color: var(--color-blue-royal);
+  border: 1.5px solid var(--color-blue-royal);
+  padding: 11px 20px;
+  border-radius: var(--radius-md);
+  font-size: 0.88rem;
+  font-weight: 700;
+  transition: var(--transition-smooth);
+}
+
+.btn-maps-outline:hover {
+  background: var(--color-blue-royal);
+  color: var(--color-white);
+  box-shadow: 0 4px 14px rgba(22, 99, 222, 0.25);
+}
+
+.clinic-photo-wrapper {
+  margin-top: 10px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border-subtle);
+  background: #FFFFFF;
+}
+
+.clinic-photo-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.clinic-photo-caption {
+  display: block;
+  font-size: 0.74rem;
+  color: var(--color-neutral-gray);
+  padding: 8px 12px;
+  text-align: center;
+  background: #FFFFFF;
+}
+
+/* Equipe de Fisioterapeutas */
+.unit-team-intro {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.team-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fisio-profile-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: #FFFFFF;
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  transition: var(--transition-smooth);
+}
+
+.fisio-profile-card:hover {
+  border-color: var(--color-blue-royal);
+  box-shadow: var(--shadow-subtle);
+}
+
+.fisio-photo-box {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--color-pastel-blue);
+  flex-shrink: 0;
+  background: var(--color-ice-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fisio-avatar-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.fisio-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.fisio-badge-role {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--color-blue-royal);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.fisio-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-blue-night);
+  margin-top: 2px;
+}
+
+.fisio-crefito {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-neutral-gray);
+}
+
+.fisio-specialty {
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.btn-team-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--color-primary-cta);
+  color: var(--color-white);
+  padding: 13px 22px;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-cta);
+  transition: var(--transition-smooth);
+  margin-top: auto;
+}
+
+.btn-team-cta:hover {
+  background: var(--color-primary-cta-hover);
+  box-shadow: var(--shadow-cta-hover);
+  transform: translateY(-2px);
+}
+
+.btn-team-cta .icon-wpp {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* --------------------------------------------------------------------------
+   13. DOBRA 7: PERGUNTAS FREQUENTES (FAQ ACCORDION)
+   -------------------------------------------------------------------------- */
+.faq-section {
+  background: var(--color-page-bg);
+}
+
+.faq-accordion-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faq-accordion-item {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.faq-accordion-item[open] {
+  border-color: var(--color-blue-royal);
+  box-shadow: var(--shadow-subtle);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-blue-night);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.faq-icon-arrow {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-blue-royal);
+  transition: transform 0.25s ease;
+}
+
+.faq-accordion-item[open] .faq-icon-arrow {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  padding: 0 24px 20px;
+  font-size: 0.94rem;
+  color: var(--color-text-muted);
+  line-height: 1.58;
+}
+
+/* --------------------------------------------------------------------------
+   14. DOBRA 8: CTA FINAL + RODAPÉ INSTITUCIONAL
+   -------------------------------------------------------------------------- */
+.final-cta-section {
+  padding-top: 60px;
+  padding-bottom: 80px;
+  background: var(--color-page-bg);
+}
+
+.final-cta-card {
+  background: linear-gradient(135deg, var(--color-blue-base) 0%, var(--color-blue-night) 100%);
+  border-radius: var(--radius-xl);
+  padding: 60px 32px;
+  text-align: center;
+  color: var(--color-white);
+  box-shadow: var(--shadow-float);
+  position: relative;
+  overflow: hidden;
+}
+
+.final-cta-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.final-badge-pill {
+  background: rgba(255, 255, 255, 0.12);
+  color: #93C5FD;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+}
+
+.final-cta-title {
+  font-size: clamp(1.9rem, 3.2vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.final-cta-desc {
+  font-size: 1.05rem;
+  color: #CBD5E1;
+  line-height: 1.55;
+  max-width: 580px;
+}
+
+.btn-final-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--color-blue-royal);
+  color: var(--color-white);
+  padding: 16px 34px;
+  border-radius: var(--radius-full);
+  font-size: 1.05rem;
+  font-weight: 700;
+  box-shadow: 0 10px 25px -3px rgba(22, 99, 222, 0.5);
+  margin-top: 8px;
+  transition: var(--transition-smooth);
+}
+
+.btn-final-primary:hover {
+  background: #FFFFFF;
+  color: var(--color-blue-night);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(255, 255, 255, 0.35);
+}
+
+.btn-final-primary .icon-wpp {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.final-guarantees {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  font-size: 0.8rem;
+  color: #94A3B8;
+  margin-top: 6px;
+}
+
+/* Rodapé Institucional */
+.site-footer {
+  background: #040F22;
+  color: #94A3B8;
+  padding-top: 64px;
+  padding-bottom: 40px;
+  font-size: 0.88rem;
+  border-top: 1px solid rgba(173, 202, 247, 0.15);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-logo {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-brand-desc {
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: #94A3B8;
+  max-width: 340px;
+}
+
+.footer-social-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.social-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition: var(--transition-fast);
+}
+
+.social-btn:hover {
+  background: var(--color-blue-royal);
+  border-color: var(--color-blue-royal);
+}
+
+.footer-col-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.02em;
+}
+
+.footer-unit-title {
+  color: #60A5FA;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.footer-unit-address, .footer-unit-phone {
+  color: #CBD5E1;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.footer-seals-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.seal-badge {
+  display: inline-block;
+  background: rgba(22, 99, 222, 0.18);
+  border: 1px solid rgba(22, 99, 222, 0.4);
+  color: #93C5FD;
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  width: fit-content;
+}
+
+.footer-ethical-note {
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: #64748B;
+  margin-top: 6px;
+}
+
+.footer-bottom-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin-bottom: 28px;
+}
+
+.footer-legal-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-legal-text {
+  font-size: 0.74rem;
+  line-height: 1.55;
+  color: #64748B;
+}
+
+.footer-copyright {
+  font-size: 0.76rem;
+  color: #475569;
+}
+
+/* --------------------------------------------------------------------------
+   15. MOBILE STICKY ACTION DOCK (AZUL ROYAL OFICIAL)
+   -------------------------------------------------------------------------- */
+.mobile-sticky-dock {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--color-ice-blue);
+  padding: 12px 18px calc(12px + env(safe-area-inset-bottom, 0px));
+  box-shadow: 0 -8px 24px rgba(9, 41, 94, 0.08);
+}
+
+.mobile-dock-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.mobile-dock-unit-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-unit-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-blue-base);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 170px;
+}
+
+.mobile-unit-hours {
+  font-size: 0.68rem;
+  color: var(--color-neutral-gray);
+  font-weight: 500;
+}
+
+.mobile-dock-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-primary-cta);
+  color: var(--color-white);
+  padding: 11px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.84rem;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(22, 99, 222, 0.35);
+  flex-shrink: 0;
+  transition: var(--transition-smooth);
+}
+
+.mobile-dock-btn:hover {
+  background: var(--color-primary-cta-hover);
+}
+
+.mobile-dock-btn .icon-wpp {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+}
+
+/* --------------------------------------------------------------------------
+   16. COMPONENTES VISUAIS CMS: HIGHLIGHT DOS PLACEHOLDERS WIX
+   -------------------------------------------------------------------------- */
+.wix-field-marker {
+  position: relative;
+  display: inline;
+}
+
+body.show-wix-tags .wix-field-marker::before {
+  content: attr(data-wix-tag);
+  background: #FEF08A;
+  color: #854D0E;
+  font-family: monospace;
+  font-size: 0.72em;
+  padding: 1px 5px;
+  border-radius: 4px;
+  border: 1px solid #CA8A04;
+  margin-right: 4px;
+  font-weight: 700;
+  vertical-align: middle;
+}
+
+body.show-wix-tags .unit-dynamic-pill,
+body.show-wix-tags .hours-info-badge,
+body.show-wix-tags .btn-hero-primary,
+body.show-wix-tags .testimonial-card,
+body.show-wix-tags .contact-value,
+body.show-wix-tags .fisio-profile-card {
+  outline: 2px dashed var(--color-blue-royal);
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   17. RESPONSIVIDADE E BREAKPOINTS (1080px / 900px / 768px / 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1080px) {
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+
+  .visual-img-container {
+    height: 420px;
+  }
+
+  .floating-badge-authority {
+    left: -10px;
+    top: -16px;
+    padding: 10px 14px;
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .founders-spotlight-card {
+    grid-template-columns: 1fr;
+  }
+
+  .founders-img-wrap {
+    min-height: 240px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-block {
+    min-height: auto;
+  }
+
+  .site-header .hours-info-badge {
+    display: none;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-copy-column {
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-kicker-stack {
+    align-self: center;
+  }
+
+  .hero-lead-text {
+    max-width: 600px;
+  }
+
+  .hero-cta-wrapper {
+    align-items: center;
+  }
+
+  .hero-metrics-strip {
+    justify-content: center;
+    width: 100%;
+    max-width: 520px;
+  }
+
+  .visual-canvas-card {
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .floating-badge-authority {
+    left: 16px;
+    top: -16px;
+  }
+
+  .phases-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .pathologies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonials-video-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .unit-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-inline-cta-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wix-cms-toolbar {
+    display: none;
+  }
+
+  .section-padding {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .header-inner {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .brand-logo-img {
+    height: 32px;
+  }
+
+  .header-vertical-divider {
+    display: none;
+  }
+
+  .unit-dynamic-pill {
+    padding: 4px 10px;
+    font-size: 0.74rem;
+    max-width: 220px;
+  }
+
+  .unit-dynamic-pill .unit-name-text {
+    max-width: 175px;
+  }
+
+  .btn-header-cta {
+    display: none;
+  }
+
+  .hero-block {
+    padding-top: 24px;
+    padding-bottom: 80px;
+  }
+
+  .hero-title {
+    font-size: 1.85rem;
+  }
+
+  .hero-lead-text {
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+
+  .btn-hero-primary {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+  }
+
+  .hero-guarantee-note {
+    font-size: 0.75rem;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-metrics-strip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px 20px;
+    padding-top: 14px;
+    margin-top: 8px;
+  }
+
+  .metric-col {
+    align-items: center;
+    text-align: center;
+    min-width: 90px;
+  }
+
+  .metric-sep {
+    display: none;
+  }
+
+  .metric-number {
+    font-size: 1.2rem;
+  }
+
+  .metric-label {
+    font-size: 0.68rem;
+  }
+
+  .visual-img-container {
+    height: 320px;
+  }
+
+  .photo-discrete-pill {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+  }
+
+  .floating-badge-authority {
+    left: 12px;
+    top: -14px;
+    padding: 8px 12px;
+    gap: 8px;
+  }
+
+  .badge-seal-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .badge-stat-strong {
+    font-size: 0.96rem;
+  }
+
+  .badge-stat-sub {
+    font-size: 0.6rem;
+  }
+
+  .pathologies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .founders-text-wrap {
+    padding: 24px 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .mobile-sticky-dock {
+    display: block;
+  }
+}
