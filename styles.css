@@ -1,8 +1,9 @@
 /* ==========================================================================
    REDE DOUTOR HÉRNIA - MASTER LANDING PAGE SYSTEM 2026
-   Direção de Arte: Alto Padrão Clínico, CRO Avançado e Wix Studio Ready
-   Paleta Oficial: Azul Royal #1663DE, Azul Base #09295E, Azul Noite #061A3B
-   ATENÇÃO: Proibido o uso de vermelho nos botões/CTAs conforme diretriz direta.
+   Direção de Arte: Clinical Precision & Health-Tech (Wix Studio Ready)
+   Paleta: Fundo Gelo #F6F9FC, Azul Noite #061A3B, Azul Base #09295E,
+           Azul Royal #1663DE, Verde Esmeralda #10B981 / #059669
+   ATENÇÃO: Proibido o uso de vermelho em botões/CTAs.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -52,54 +53,62 @@
    2. DESIGN TOKENS & PALETA DE CORES OFICIAL
    -------------------------------------------------------------------------- */
 :root {
-  /* Cores Oficiais da Marca e CTAs (AZUL REAL CONFORME ORIENTAÇÃO DO USUÁRIO) */
-  --color-primary-cta: #1663DE;        /* Ação Principal / WhatsApp (Azul Royal) */
-  --color-primary-cta-hover: #09295E;  /* Hover CTA (Azul Institucional Escuro) */
-  --color-blue-base: #09295E;          /* Base Institucional */
-  --color-blue-night: #061A3B;         /* Azul Noite / Títulos Escuros */
-  --color-blue-royal: #1663DE;         /* Realces e Badges Principais */
+  /* Cores Oficiais da Marca e CTAs */
+  --color-primary-cta: #10B981;        /* Verde Esmeralda Alta Conversão */
+  --color-primary-cta-hover: #059669;  /* Hover CTA Esmeralda Escuro */
+  --color-primary-cta-dark: #047857;   /* Ativo */
+  --color-emerald: #10B981;            /* Verde Esmeralda Clínico Padrão */
+  --color-emerald-dark: #059669;       /* Verde Esmeralda Clínico Profundo */
+  
+  --color-blue-base: #09295E;          /* Base Institucional Doutor Hérnia */
+  --color-blue-night: #061A3B;         /* Azul Noite Profundo / Títulos */
+  --color-blue-royal: #1663DE;         /* Realces e Elementos Estratégicos */
+  --color-blue-royal-hover: #09295E;   /* Hover Realce */
   --color-blue-medium: #2C5391;        /* Azul Médio de Apoio */
-  --color-neutral-gray: #606062;       /* Apoio Neutro / Legendas */
-  --color-ice-blue: #E5EFFF;           /* Fundos e Badges Suaves */
+  --color-ice-blue: #E5EFFF;           /* Fundo e Badges Suaves */
   --color-pastel-blue: #ADCAF7;        /* Bordas e Divisores Sutis */
 
-  /* Cores Complementares Neutras */
+  /* Cores de Superfície & Neutros */
   --color-white: #FFFFFF;
-  --color-page-bg: #F8FAFD;
+  --color-page-bg: #F6F9FC;
   --color-card-bg: #FFFFFF;
   --color-text-dark: #061A3B;
   --color-text-body: #334155;
   --color-text-muted: #64748B;
-  --color-border-card: rgba(173, 202, 247, 0.45);
+  --color-border-card: rgba(9, 41, 94, 0.08);
   --color-border-subtle: #E2E8F0;
+  --color-hairline: rgba(9, 41, 94, 0.09);
 
-  /* Status e Sucesso */
+  /* Status e Telemetria */
   --color-status-green: #10B981;
   --color-status-green-bg: rgba(16, 185, 129, 0.12);
 
   /* Tipografia */
   --font-family: 'Lufga', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-  /* Sombras Nobres e Profundidade (Tons Azuis Clínicos) */
+  /* Sombras Precisas (Clinical Depth) */
   --shadow-subtle: 0 2px 8px rgba(9, 41, 94, 0.04);
   --shadow-card: 0 8px 24px -4px rgba(9, 41, 94, 0.08), 0 2px 6px rgba(9, 41, 94, 0.04);
-  --shadow-card-hover: 0 16px 36px -6px rgba(9, 41, 94, 0.14), 0 4px 12px rgba(9, 41, 94, 0.06);
-  --shadow-float: 0 16px 36px -6px rgba(9, 41, 94, 0.14), 0 4px 12px rgba(9, 41, 94, 0.06);
-  --shadow-cta: 0 10px 25px -3px rgba(22, 99, 222, 0.35), 0 4px 10px rgba(22, 99, 222, 0.18);
-  --shadow-cta-hover: 0 14px 30px -2px rgba(9, 41, 94, 0.45), 0 6px 14px rgba(9, 41, 94, 0.25);
+  --shadow-card-hover: 0 16px 36px -6px rgba(9, 41, 94, 0.12), 0 4px 12px rgba(9, 41, 94, 0.06);
+  --shadow-float: 0 20px 40px -8px rgba(9, 41, 94, 0.16);
+  --shadow-cta: 0 10px 24px -4px rgba(16, 185, 129, 0.4), 0 4px 8px rgba(16, 185, 129, 0.2);
+  --shadow-cta-hover: 0 14px 28px -2px rgba(5, 150, 105, 0.45);
 
-  /* Transições e Curvas */
+  /* Curvas e Raios (4px grid) */
+  --radius-xs: 4px;
   --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 20px;
-  --radius-xl: 28px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
   --radius-full: 9999px;
-  --transition-fast: 0.18s ease-in-out;
+
+  /* Transições Fluidas */
+  --transition-fast: 0.16s ease;
   --transition-smooth: 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Largura Máxima Container */
   --max-w-screen: 1240px;
-  --max-w-narrow: 880px;
+  --max-w-narrow: 840px;
 }
 
 /* --------------------------------------------------------------------------
@@ -115,16 +124,25 @@ html {
   font-size: 16px;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: clip;
 }
 
 body {
   font-family: var(--font-family);
+  font-weight: 400;
   background-color: var(--color-page-bg);
   color: var(--color-text-body);
-  line-height: 1.55;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;
+  position: relative;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 img {
@@ -133,224 +151,261 @@ img {
   display: block;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: var(--transition-smooth);
-}
-
 button {
   font-family: inherit;
-  cursor: pointer;
   border: none;
   background: none;
+  cursor: pointer;
+}
+
+/* Tabular Nums para todos os dados numéricos */
+.metric-number,
+.gauge-ticker-value,
+.why-stat-number,
+.stage-stat-num,
+.step-num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Acessibilidade para leitores de tela */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }
 
 /* --------------------------------------------------------------------------
-   4. WIX STUDIO READY - LAYOUT & STACK PRIMITIVES
+   4. LAYOUT CONTAINERS & SEÇÕES
    -------------------------------------------------------------------------- */
-.wix-section {
-  width: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .wix-container {
   width: 100%;
   max-width: var(--max-w-screen);
-  padding: 0 24px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .max-w-narrow {
   max-width: var(--max-w-narrow);
 }
 
+.wix-section {
+  position: relative;
+  width: 100%;
+}
+
 .section-padding {
-  padding-top: 52px;
-  padding-bottom: 52px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
-.wix-stack-h {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-/* Cabeçalhos de Seção Centralizados */
-.section-header-center {
+.section-header-center,
+.section-header-editorial-center {
   text-align: center;
   max-width: 720px;
-  margin: 0 auto 52px;
+  margin: 0 auto 48px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
 }
 
+.section-header-split {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 40px;
+  align-items: end;
+  margin-bottom: 44px;
+  border-bottom: 1px solid var(--color-hairline);
+  padding-bottom: 24px;
+}
+
+.header-split-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.header-split-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.section-header-split .section-title {
+  margin-bottom: 0;
+}
+
+.section-header-split .section-subtitle {
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+
+/* Kicker Editorial Tabular (Zero pílula arredondada slop) */
 .section-badge-pill {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  background: var(--color-ice-blue);
+  gap: 8px;
+  background: transparent;
   color: var(--color-blue-royal);
-  border: 1px solid rgba(173, 202, 247, 0.6);
-  font-size: 0.75rem;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  font-size: 0.8rem;
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 0.08em;
-  padding: 6px 14px;
-  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.section-badge-pill .kicker-index {
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+  color: var(--color-blue-base);
+  font-weight: 800;
+}
+
+.section-badge-pill .kicker-dot {
+  color: var(--color-emerald);
+  font-weight: 900;
+  font-size: 1.15rem;
+  line-height: 1;
 }
 
 .section-title {
-  font-size: clamp(1.85rem, 2.8vw, 2.45rem);
+  font-size: clamp(1.85rem, 3.2vw, 2.5rem);
   font-weight: 700;
   color: var(--color-blue-night);
-  line-height: 1.22;
+  line-height: 1.2;
   letter-spacing: -0.02em;
+  margin-bottom: 12px;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .section-subtitle {
   font-size: 1.05rem;
   color: var(--color-text-muted);
   line-height: 1.55;
-  font-weight: 400;
-  max-width: 620px;
 }
 
 /* --------------------------------------------------------------------------
-   5. TOOLBAR WIX STUDIO CMS (FLUTUANTE & DISCRETA)
+   5. TOOLBAR WIX STUDIO CMS (DEV BAR)
    -------------------------------------------------------------------------- */
 .wix-cms-toolbar {
-  position: fixed;
-  bottom: 20px;
-  left: 24px;
+  background: #061A3B;
+  color: #FFFFFF;
+  padding: 8px 16px;
+  font-size: 0.76rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
   z-index: 1000;
-  max-width: 440px;
-  background: rgba(6, 26, 59, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(173, 202, 247, 0.3);
-  border-radius: var(--radius-full);
-  padding: 6px 14px;
-  box-shadow: 0 10px 25px rgba(6, 26, 59, 0.25);
-  transition: var(--transition-smooth);
-}
-
-.wix-cms-toolbar:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(6, 26, 59, 0.35);
 }
 
 .wix-cms-toolbar-inner {
+  max-width: var(--max-w-screen);
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: space-between;
 }
 
 .cms-status-indicator {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.74rem;
-  color: #CBD5E1;
-}
-
-.cms-collection-pill {
-  font-size: 0.74rem;
-  color: #CBD5E1;
+  gap: 12px;
 }
 
 .cms-live-badge {
-  background: var(--color-blue-royal);
-  color: var(--color-white);
-  font-size: 0.65rem;
-  font-weight: 800;
-  padding: 2px 7px;
-  border-radius: var(--radius-full);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  background: var(--color-emerald);
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: var(--radius-xs);
+  font-weight: 700;
+  font-size: 0.7rem;
+}
+
+.cms-collection-pill {
+  color: #CBD5E1;
+}
+
+.cms-collection-pill strong {
+  color: #FFFFFF;
 }
 
 .cms-toggle-btn {
   background: rgba(255, 255, 255, 0.12);
-  color: var(--color-white);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 5px 12px;
+  color: #FFFFFF;
+  padding: 4px 12px;
   border-radius: var(--radius-full);
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 600;
   transition: var(--transition-fast);
 }
 
 .cms-toggle-btn:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: var(--color-blue-royal);
 }
 
 /* --------------------------------------------------------------------------
-   6. HEADER OFICIAL DA LANDING PAGE
+   6. HEADER OFICIAL (WIX STUDIO READY)
    -------------------------------------------------------------------------- */
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(173, 202, 247, 0.35);
-  box-shadow: var(--shadow-subtle);
-  width: 100%;
+  border-bottom: 1px solid var(--color-hairline);
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  transition: var(--transition-fast);
 }
 
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 14px;
-  padding-bottom: 14px;
-  gap: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  min-height: 52px;
 }
 
 .header-left-stack {
   display: flex;
   align-items: center;
-  gap: 18px;
-}
-
-.brand-logo-link {
-  display: inline-flex;
-  align-items: center;
+  gap: 16px;
 }
 
 .brand-logo-img {
-  height: 38px;
+  height: 36px;
   width: auto;
   object-fit: contain;
 }
 
 .header-vertical-divider {
   width: 1px;
-  height: 26px;
-  background-color: var(--color-pastel-blue);
-  opacity: 0.65;
+  height: 24px;
+  background: var(--color-hairline);
 }
 
 .unit-dynamic-pill {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 6px;
   background: var(--color-ice-blue);
-  border: 1px solid var(--color-pastel-blue);
-  padding: 5px 13px;
-  border-radius: var(--radius-full);
-  font-size: 0.8rem;
-  font-weight: 700;
   color: var(--color-blue-base);
-  letter-spacing: 0.02em;
-  max-width: 280px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.76rem;
+  font-weight: 600;
+  border: 1px solid rgba(22, 99, 222, 0.14);
+  max-width: 320px;
 }
 
 .unit-icon-pin {
@@ -360,12 +415,17 @@ button {
   flex-shrink: 0;
 }
 
-.unit-name-text {
+.unit-dynamic-pill .unit-name-text,
+.mobile-unit-title {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: inline-block;
-  max-width: 220px;
+}
+
+.section-title .unit-name-text,
+.footer-unit-title {
+  white-space: normal;
+  word-break: break-word;
 }
 
 .header-right-stack {
@@ -378,79 +438,64 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.8rem;
-  color: var(--color-text-body);
-  background: #F1F5F9;
-  border: 1px solid var(--color-border-subtle);
-  padding: 6px 14px;
-  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
 }
 
 .hours-live-dot {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: var(--color-status-green);
-  box-shadow: 0 0 0 3px var(--color-status-green-bg);
+  background: var(--color-emerald);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
 }
 
-/* CTA Header em Azul Royal Oficial */
 .btn-header-cta {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: transparent;
-  color: var(--color-blue-royal);
-  border: 1.5px solid var(--color-blue-royal);
+  background: var(--color-primary-cta);
+  color: var(--color-white);
   padding: 8px 18px;
   border-radius: var(--radius-full);
-  font-size: 0.84rem;
+  font-size: 0.82rem;
   font-weight: 700;
   transition: var(--transition-smooth);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
 }
 
 .btn-header-cta:hover {
-  background: var(--color-blue-royal);
-  color: var(--color-white);
-  box-shadow: 0 4px 14px rgba(22, 99, 222, 0.25);
+  background: var(--color-primary-cta-hover);
   transform: translateY(-1px);
 }
 
 .btn-header-cta .icon-wpp {
-  width: 17px;
-  height: 17px;
+  width: 16px;
+  height: 16px;
   fill: currentColor;
 }
 
 /* --------------------------------------------------------------------------
-   7. BLOCO 1: HERO BANNER REFINADO (DOBRA 1)
-   Texto enxuto, tipografia equilibrada, foto limpa, CTA em Azul
+   7. DOBRA 1: HERO BANNER REFINADO (CLINICAL PRECISION GAUGE)
    -------------------------------------------------------------------------- */
 .hero-block {
-  min-height: auto;
-  display: flex;
-  align-items: center;
-  padding-top: 36px;
-  padding-bottom: 40px;
-  background: radial-gradient(circle at 85% 15%, rgba(229, 239, 255, 0.75) 0%, rgba(248, 250, 253, 0) 55%),
-              linear-gradient(180deg, #FFFFFF 0%, #F8FAFD 100%);
+  padding-top: 40px;
+  padding-bottom: 56px;
+  background: radial-gradient(circle at 85% 15%, rgba(229, 239, 255, 0.8) 0%, rgba(246, 249, 252, 0) 60%),
+              linear-gradient(180deg, #FFFFFF 0%, #F6F9FC 100%);
   position: relative;
   overflow: hidden;
 }
 
-.hero-block > .wix-container {
-  width: 100%;
-}
-
 .hero-bg-accent {
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 650px;
-  height: 650px;
+  top: -100px;
+  right: -100px;
+  width: 600px;
+  height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(173, 202, 247, 0.22) 0%, rgba(229, 239, 255, 0.05) 65%, transparent 100%);
-  filter: blur(50px);
+  background: radial-gradient(circle, rgba(173, 202, 247, 0.2) 0%, rgba(229, 239, 255, 0.04) 65%, transparent 100%);
+  filter: blur(60px);
   pointer-events: none;
   z-index: 0;
 }
@@ -458,8 +503,8 @@ button {
 .hero-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
-  align-items: center;
   gap: 48px;
+  align-items: stretch;
   position: relative;
   z-index: 1;
 }
@@ -467,177 +512,158 @@ button {
 .hero-copy-column {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 .hero-kicker-stack {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-  background: var(--color-white);
-  border: 1px solid var(--color-pastel-blue);
-  padding: 5px 14px 5px 6px;
+  gap: 8px;
+  background: #FFFFFF;
+  border: 1px solid var(--color-hairline);
+  padding: 6px 14px;
   border-radius: var(--radius-full);
-  box-shadow: 0 2px 8px rgba(9, 41, 94, 0.04);
+  width: fit-content;
+  box-shadow: var(--shadow-subtle);
+}
+
+.telemetry-live-dot {
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  min-height: 8px;
+  max-width: 8px;
+  max-height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-emerald);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+  animation: pulseDot 2s infinite ease-in-out;
+  align-self: center;
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.15); opacity: 0.85; }
 }
 
 .kicker-tag {
-  background: var(--color-blue-royal);
-  color: var(--color-white);
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 4px 10px;
-  border-radius: var(--radius-full);
+  color: var(--color-blue-royal);
+}
+
+.kicker-divider {
+  color: var(--color-pastel-blue);
 }
 
 .kicker-context {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--color-blue-base);
+  font-size: 0.74rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
 }
 
-/* Título H1 Mais Elegante e Proporcional */
 .hero-title {
-  font-size: clamp(2rem, 3.2vw, 2.65rem);
+  font-size: clamp(2.1rem, 3.4vw, 2.85rem);
   font-weight: 700;
-  line-height: 1.18;
-  color: var(--color-blue-night);
+  color: #061A3B;
+  line-height: 1.16;
   letter-spacing: -0.025em;
 }
 
 .hero-title-highlight {
-  color: var(--color-blue-royal);
-  position: relative;
-  display: inline-block;
+  color: #061A3B;
 }
 
-/* Subtítulo de 2 Linhas Curtas e Escaneáveis */
 .hero-lead-text {
-  font-size: 1.05rem;
+  font-size: 1.02rem;
+  color: var(--color-text-body);
   line-height: 1.58;
-  color: #475569;
-  font-weight: 400;
-  max-width: 560px;
+  max-width: 540px;
 }
 
-/* Bloco CTA Principal em Azul Royal #1663DE */
 .hero-cta-wrapper {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
 .btn-hero-primary {
   display: inline-flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 14px;
-  background: linear-gradient(135deg, #1663DE 0%, #0D4DB2 100%);
+  gap: 16px;
+  background: var(--color-primary-cta);
   color: var(--color-white);
-  padding: 14px 26px;
-  border-radius: var(--radius-md);
+  padding: 15px 26px;
+  border-radius: var(--radius-full);
   box-shadow: var(--shadow-cta);
   transition: var(--transition-smooth);
   width: fit-content;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-hero-primary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
-  transform: skewX(-22deg);
-  transition: 0.75s ease;
 }
 
 .btn-hero-primary:hover {
-  background: linear-gradient(135deg, #09295E 0%, #061A3B 100%);
-  box-shadow: var(--shadow-cta-hover);
+  background: var(--color-primary-cta-hover);
   transform: translateY(-2px);
-}
-
-.btn-hero-primary:hover::before {
-  left: 140%;
+  box-shadow: var(--shadow-cta-hover);
 }
 
 .cta-icon-box {
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: var(--transition-fast);
-}
-
-.btn-hero-primary:hover .cta-icon-box {
-  background: rgba(255, 255, 255, 0.26);
-  transform: scale(1.05);
 }
 
 .cta-icon-box .icon-wpp {
-  width: 24px;
-  height: 24px;
-  fill: var(--color-white);
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
 }
 
 .cta-text-content {
   display: flex;
   flex-direction: column;
-  text-align: left;
 }
 
 .cta-label-top {
-  font-size: 1.05rem;
+  font-size: 0.98rem;
   font-weight: 700;
-  line-height: 1.25;
-  color: var(--color-white);
-  letter-spacing: -0.01em;
+  line-height: 1.2;
 }
 
 .cta-label-sub {
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: #D8E4FA;
-  letter-spacing: 0.01em;
+  font-size: 0.74rem;
+  opacity: 0.9;
+  font-weight: 400;
 }
 
 .hero-guarantee-note {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--color-neutral-gray);
-  padding-left: 4px;
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
 }
 
-.icon-shield {
-  width: 16px;
-  height: 16px;
-  color: var(--color-blue-royal);
+.hero-guarantee-note .icon-shield {
+  width: 17px;
+  height: 17px;
   flex-shrink: 0;
 }
 
-/* Mini Strip de Métricas */
 .hero-metrics-strip {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 24px;
   padding-top: 16px;
+  border-top: 1px solid var(--color-hairline);
   margin-top: 6px;
-  border-top: 1px solid rgba(173, 202, 247, 0.4);
 }
 
 .metric-col {
@@ -647,70 +673,59 @@ button {
 
 .metric-number {
   font-size: 1.35rem;
-  font-weight: 800;
-  color: var(--color-blue-base);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  color: var(--color-blue-night);
+  line-height: 1.2;
 }
 
 .metric-label {
-  font-size: 0.74rem;
-  font-weight: 500;
-  color: var(--color-neutral-gray);
-  margin-top: 2px;
-  line-height: 1.3;
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
 }
 
 .metric-sep {
   width: 1px;
   height: 32px;
-  background: var(--color-pastel-blue);
-  opacity: 0.5;
+  background: var(--color-hairline);
 }
 
-/* Coluna Visual e Foto Clínica Limpa */
+/* Coluna Visual: Composição Editorial Unificada de Altura Compacta (440px-470px) */
 .hero-visual-column {
-  position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  height: 100%;
 }
 
 .visual-canvas-card {
   position: relative;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 440px;
+  max-height: 470px;
   border-radius: var(--radius-xl);
-  background: var(--color-white);
-  padding: 10px;
-  border: 1px solid var(--color-border-card);
+  overflow: hidden;
+  border: 1px solid var(--color-hairline);
   box-shadow: var(--shadow-card);
-  transition: var(--transition-smooth);
-}
-
-.visual-canvas-card:hover {
-  box-shadow: var(--shadow-float);
-  border-color: var(--color-pastel-blue);
+  background: #FFFFFF;
 }
 
 .visual-img-container {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: 460px;
-  border-radius: 20px;
+  height: 100%;
+  border-radius: 0;
   overflow: hidden;
-  position: relative;
-  background-color: var(--color-ice-blue);
+  box-shadow: none;
+  border: none;
 }
 
 .visual-clinical-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.visual-canvas-card:hover .visual-clinical-photo {
-  transform: scale(1.02);
+  object-position: center 25%;
 }
 
 .visual-bottom-gradient {
@@ -718,161 +733,383 @@ button {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100px;
-  background: linear-gradient(180deg, transparent 0%, rgba(6, 26, 59, 0.65) 100%);
+  height: 190px;
+  background: linear-gradient(180deg, transparent 0%, rgba(6, 26, 59, 0.45) 50%, rgba(6, 26, 59, 0.85) 100%);
   pointer-events: none;
   z-index: 1;
 }
 
-/* Única Pill Discreta na Base da Fotografia (Área Arejada) */
 .photo-discrete-pill {
   position: absolute;
-  bottom: 16px;
+  top: 16px;
   left: 16px;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(6, 26, 59, 0.82);
+  bottom: auto;
+  background: rgba(6, 26, 59, 0.85);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(173, 202, 247, 0.35);
+  color: #FFFFFF;
   padding: 6px 14px;
   border-radius: var(--radius-full);
-  color: #FFFFFF;
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   font-weight: 600;
-  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 3;
 }
 
 .photo-pill-dot {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background: #60A5FA;
-  box-shadow: 0 0 6px #60A5FA;
+  background: var(--color-emerald);
 }
 
-/* Badge Flutuante Autoridade (+3 Milhões) */
-.floating-badge-authority {
+/* Console de Telemetria Clínica 95,7% Ancorado */
+.clinical-gauge-card {
   position: absolute;
-  top: -16px;
-  left: -16px;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: var(--color-white);
-  border: 1px solid var(--color-pastel-blue);
-  padding: 12px 18px;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-float);
-  animation: float-gentle 4.5s ease-in-out infinite;
-}
-
-@keyframes float-gentle {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-
-.badge-seal-icon {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: var(--color-ice-blue);
-  border: 1.5px solid var(--color-blue-royal);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-blue-royal);
-  flex-shrink: 0;
-}
-
-.badge-seal-icon svg {
-  width: 20px;
-  height: 20px;
-}
-
-.badge-authority-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.badge-stat-strong {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: var(--color-blue-base);
-  line-height: 1.1;
-}
-
-.badge-stat-sub {
-  font-size: 0.7rem;
-  font-weight: 600;
-  color: var(--color-neutral-gray);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-top: 2px;
-}
-
-/* --------------------------------------------------------------------------
-   8. DOBRA 2: O MÉTODO EXCLUSIVO EM 3 FASES
-   -------------------------------------------------------------------------- */
-.method-section {
-  background: #FFFFFF;
-  border-top: 1px solid rgba(173, 202, 247, 0.25);
-  border-bottom: 1px solid rgba(173, 202, 247, 0.25);
-}
-
-.phases-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-}
-
-.phase-card {
-  background: #F8FAFD;
-  border: 1px solid var(--color-border-card);
-  border-radius: var(--radius-lg);
-  padding: 32px 26px;
-  display: flex;
-  flex-direction: column;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: none;
+  border-top: 1px solid rgba(22, 99, 222, 0.14);
+  border-radius: 0;
+  padding: 14px 18px;
+  box-shadow: 0 -4px 20px rgba(6, 26, 59, 0.08);
   transition: var(--transition-smooth);
-  position: relative;
 }
 
-.phase-card:hover {
-  background: #FFFFFF;
-  border-color: var(--color-blue-royal);
-  box-shadow: var(--shadow-card-hover);
-  transform: translateY(-4px);
+.clinical-gauge-card:hover {
+  background: rgba(255, 255, 255, 0.99);
 }
 
-.phase-card-highlight {
-  border-color: var(--color-blue-royal);
-  background: linear-gradient(180deg, #F0F6FF 0%, #FFFFFF 100%);
-  box-shadow: 0 8px 24px -4px rgba(22, 99, 222, 0.12);
-}
-
-.phase-card-top {
+.gauge-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
 
-.phase-number-badge {
+.gauge-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gauge-kicker {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-blue-night);
+  letter-spacing: 0.01em;
+}
+
+.gauge-badge-verified {
+  font-size: 0.68rem;
+  font-weight: 600;
   background: var(--color-ice-blue);
-  color: var(--color-blue-base);
-  font-size: 0.75rem;
+  color: var(--color-blue-royal);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.gauge-visual-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.gauge-svg-wrapper {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.gauge-svg {
+  transform: rotate(-90deg);
+}
+
+.gauge-progress {
+  transition: stroke-dashoffset 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gauge-value-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gauge-ticker-value {
+  font-size: 1.25rem;
   font-weight: 800;
+  font-feature-settings: "tnum";
+  color: var(--color-blue-night);
+}
+
+.gauge-copy-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex-grow: 1;
+}
+
+.gauge-main-label {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--color-blue-night);
+}
+
+.gauge-sub-label {
+  font-size: 0.74rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+.gauge-footer-meta {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--color-hairline);
+}
+
+.gauge-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.photo-pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-emerald);
+}
+
+/* --------------------------------------------------------------------------
+   8. DOBRA 2: O MÉTODO EM 3 FASES (TRACING TIMELINE & STEPPER)
+   -------------------------------------------------------------------------- */
+.method-section {
+  background: #FFFFFF;
+  border-top: 1px solid var(--color-hairline);
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+/* Layout Assimétrico: Tracing Timeline Progressiva */
+.method-tracing-experience {
+  display: grid;
+  grid-template-columns: 4.2fr 7.8fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.method-timeline-track-column {
+  position: sticky;
+  top: 96px;
+}
+
+.method-vertical-stepper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  padding-left: 28px;
+}
+
+.timeline-vertical-rail {
+  position: absolute;
+  left: 12px;
+  top: 24px;
+  bottom: 24px;
+  width: 3px;
+}
+
+.timeline-rail-background {
+  position: absolute;
+  inset: 0;
+  background: rgba(9, 41, 94, 0.12);
+  border-radius: var(--radius-full);
+}
+
+.timeline-rail-beam {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 28%;
+  background: linear-gradient(180deg, var(--color-blue-royal) 0%, var(--color-emerald) 100%);
+  border-radius: var(--radius-full);
+  transition: height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+.timeline-step-btn {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 20px;
+  border-radius: var(--radius-lg);
+  background: var(--color-page-bg);
+  border: 1px solid var(--color-hairline);
+  text-align: left;
+  transition: var(--transition-smooth);
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+}
+
+.timeline-step-btn:hover {
+  background: #FFFFFF;
+  border-color: rgba(22, 99, 222, 0.3);
+  transform: translateX(3px);
+}
+
+.timeline-step-btn.active {
+  background: #FFFFFF;
+  border-color: var(--color-blue-royal);
+  box-shadow: 0 10px 28px rgba(22, 99, 222, 0.12), 0 0 0 1px rgba(22, 99, 222, 0.25);
+  transform: translateX(6px);
+}
+
+.step-num-node {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 2px solid var(--color-hairline);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--transition-fast);
+}
+
+.timeline-step-btn.active .step-num-node {
+  background: var(--color-blue-royal);
+  border-color: var(--color-blue-royal);
+  color: #FFFFFF;
+  box-shadow: 0 0 0 4px rgba(22, 99, 222, 0.2);
+}
+
+.step-num {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--color-blue-royal);
+  font-feature-settings: "tnum";
+}
+
+.timeline-step-btn.active .step-num {
+  color: #FFFFFF;
+}
+
+.step-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.step-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-blue-night);
+}
+
+.step-sub {
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+/* Coluna Direita: Console Clínico das Fases */
+.method-console-column {
+  position: relative;
+}
+
+.phases-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.phase-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--radius-xl);
+  padding: 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: var(--transition-smooth);
+  position: relative;
+  z-index: 1;
+  opacity: 0.72;
+}
+
+.phase-card:hover,
+.phase-card.active {
+  opacity: 1;
+  background: #FFFFFF;
+  border-color: var(--color-blue-royal);
+  box-shadow: 0 16px 36px -6px rgba(22, 99, 222, 0.16), 0 0 0 1px rgba(22, 99, 222, 0.35);
+  transform: translateY(-2px);
+}
+
+.phase-card-highlight {
+  border-color: rgba(22, 99, 222, 0.22);
+}
+
+.console-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.console-badge-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.console-phase-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-blue-royal);
+  background: var(--color-ice-blue);
   padding: 4px 10px;
   border-radius: var(--radius-full);
-  letter-spacing: 0.05em;
 }
 
-.phase-number-badge.highlight {
-  background: var(--color-blue-royal);
-  color: var(--color-white);
+.console-phase-badge.highlight {
+  background: var(--color-emerald);
+  color: #FFFFFF;
+}
+
+.console-status-live {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.console-status-live.highlight {
+  color: var(--color-emerald-dark);
+  font-weight: 700;
 }
 
 .phase-icon-wrap {
@@ -880,107 +1117,342 @@ button {
   height: 48px;
   border-radius: var(--radius-md);
   background: #FFFFFF;
-  border: 1px solid var(--color-pastel-blue);
+  border: 1px solid var(--color-hairline);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-blue-royal);
+  box-shadow: var(--shadow-subtle);
+  flex-shrink: 0;
 }
 
 .phase-icon-wrap.highlight {
   background: var(--color-ice-blue);
-  border-color: var(--color-blue-royal);
+  border-color: var(--color-pastel-blue);
 }
 
-.phase-icon {
-  width: 26px;
-  height: 26px;
+.console-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .phase-title {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--color-blue-night);
-  margin-bottom: 10px;
-  line-height: 1.3;
+  line-height: 1.25;
 }
 
 .phase-desc {
-  font-size: 0.95rem;
-  color: var(--color-text-muted);
+  font-size: 0.94rem;
+  color: var(--color-text-body);
   line-height: 1.55;
 }
 
+.console-specs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  background: var(--color-page-bg);
+  padding: 16px 18px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-hairline);
+  margin-top: 4px;
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.spec-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.spec-value {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--color-blue-night);
+}
+
+.spec-pill-value {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--color-blue-base);
+}
+
+.spec-pill-value.highlight {
+  color: var(--color-emerald-dark);
+}
+
+.console-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-hairline);
+}
+
+.console-progress-track {
+  width: 100%;
+  height: 5px;
+  background: rgba(9, 41, 94, 0.08);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.console-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-blue-royal) 0%, var(--color-emerald) 100%);
+  border-radius: var(--radius-full);
+  transition: width 0.4s ease;
+}
+
+.console-progress-text {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
 /* --------------------------------------------------------------------------
-   9. DOBRA 3: PATOLOGIAS TRATADAS SEM CIRURGIA
+   9. DOBRA 3: PATOLOGIAS TRATADAS (FLUID ANIMATED TABS)
    -------------------------------------------------------------------------- */
 .pathologies-section {
   background: var(--color-page-bg);
 }
 
-.pathologies-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.pathology-card {
-  background: #FFFFFF;
-  border: 1px solid var(--color-border-card);
-  border-radius: var(--radius-lg);
-  padding: 28px 24px;
+.pathologies-tabs-wrapper {
   display: flex;
   flex-direction: column;
+  gap: 28px;
+}
+
+.tabs-nav-scroller {
+  overflow-x: auto;
+  padding-bottom: 8px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.tabs-nav-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.pathologies-tablist {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  min-width: max-content;
+  background: #FFFFFF;
+  padding: 6px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-hairline);
+  box-shadow: var(--shadow-subtle);
+  margin: 0 auto;
+}
+
+.pathology-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
   transition: var(--transition-smooth);
 }
 
-.pathology-card:hover {
-  border-color: var(--color-blue-royal);
-  box-shadow: var(--shadow-card-hover);
-  transform: translateY(-3px);
+.pathology-tab-btn:hover {
+  color: var(--color-blue-night);
 }
 
-.pathology-icon-box {
-  width: 52px;
-  height: 52px;
+.pathology-tab-btn.active {
+  background: var(--color-blue-night);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(6, 26, 59, 0.25);
+}
+
+.pathology-tab-btn .tab-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-emerald);
+}
+
+/* Stage Painel da Patologia Ativa */
+.pathology-detail-stage {
+  background: #FFFFFF;
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.pathology-tabpanel {
+  display: none;
+  grid-template-columns: 1.3fr 0.7fr;
+  padding: 36px 32px;
+  gap: 40px;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.pathology-tabpanel.active {
+  display: grid;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.stage-left-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.stage-icon-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.stage-icon-box {
+  width: 56px;
+  height: 56px;
   border-radius: var(--radius-md);
   background: var(--color-ice-blue);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 18px;
+  flex-shrink: 0;
 }
 
-.pathology-icon-box img {
-  width: 28px;
-  height: 28px;
+.stage-icon-box img {
+  width: 32px;
+  height: 32px;
 }
 
-.pathology-title {
-  font-size: 1.15rem;
+.stage-kicker {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--color-blue-royal);
+}
+
+.stage-title {
+  font-size: 1.45rem;
   font-weight: 700;
   color: var(--color-blue-night);
-  margin-bottom: 8px;
 }
 
-.pathology-desc {
-  font-size: 0.9rem;
+.stage-desc {
+  font-size: 0.98rem;
+  color: var(--color-text-body);
+  line-height: 1.6;
+}
+
+.stage-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 8px;
+}
+
+.stage-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.stage-feature-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-blue-royal);
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.feature-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-blue-night);
+  display: block;
+}
+
+.feature-text {
+  font-size: 0.85rem;
   color: var(--color-text-muted);
-  line-height: 1.52;
+  line-height: 1.45;
 }
 
-/* Strip de Ação Intermediária em Azul */
+.stage-right-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: var(--color-page-bg);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  border: 1px solid var(--color-hairline);
+  justify-content: center;
+}
+
+.stage-stat-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.stage-stat-num {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--color-blue-night);
+  line-height: 1.2;
+}
+
+.stage-stat-label {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.stage-note-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-hairline);
+  font-size: 0.74rem;
+  color: var(--color-text-muted);
+}
+
+/* Inline CTA Card */
 .section-inline-cta-card {
   margin-top: 48px;
   background: linear-gradient(135deg, var(--color-blue-base) 0%, var(--color-blue-night) 100%);
   border-radius: var(--radius-xl);
-  padding: 32px 40px;
+  padding: 32px 36px;
+  color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  color: var(--color-white);
-  box-shadow: var(--shadow-float);
+  gap: 32px;
+  box-shadow: var(--shadow-card);
+}
+
+.inline-cta-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #93C5FD;
+  margin-bottom: 6px;
 }
 
 .inline-cta-title {
@@ -994,29 +1466,27 @@ button {
   font-size: 0.92rem;
   color: #CBD5E1;
   max-width: 580px;
+  line-height: 1.5;
 }
 
 .btn-section-cta {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: var(--color-blue-royal);
-  color: var(--color-white);
+  background: var(--color-primary-cta);
+  color: #FFFFFF;
   padding: 13px 24px;
   border-radius: var(--radius-full);
   font-size: 0.92rem;
   font-weight: 700;
-  box-shadow: 0 4px 16px rgba(22, 99, 222, 0.4);
-  white-space: nowrap;
-  flex-shrink: 0;
   transition: var(--transition-smooth);
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+  white-space: nowrap;
 }
 
 .btn-section-cta:hover {
-  background: #FFFFFF;
-  color: var(--color-blue-night);
+  background: var(--color-primary-cta-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
 }
 
 .icon-wpp-sm {
@@ -1025,75 +1495,33 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   10. DOBRA 4: POR QUE ESCOLHER A DOUTOR HÉRNIA
+   10. DOBRA 4: POR QUE ESCOLHER A DOUTOR HÉRNIA (BENTO SWISS GRID)
    -------------------------------------------------------------------------- */
 .why-section {
   background: #FFFFFF;
 }
 
-.why-grid {
+.why-bento-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 7fr 5fr;
   gap: 24px;
-  margin-bottom: 48px;
+  align-items: stretch;
 }
 
-.why-card {
-  background: #F8FAFD;
-  border: 1px solid var(--color-border-card);
-  border-radius: var(--radius-lg);
-  padding: 28px 22px;
-  text-align: center;
+.founders-bento-card {
+  background: var(--color-page-bg);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-xl);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  transition: var(--transition-smooth);
-}
-
-.why-card:hover {
-  background: #FFFFFF;
-  border-color: var(--color-blue-royal);
-  box-shadow: var(--shadow-card);
-  transform: translateY(-3px);
-}
-
-.why-stat-number {
-  font-size: 1.85rem;
-  font-weight: 800;
-  color: var(--color-blue-royal);
-  line-height: 1.1;
-  margin-bottom: 8px;
-}
-
-.why-card-title {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--color-blue-night);
-  margin-bottom: 6px;
-}
-
-.why-card-desc {
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-  line-height: 1.48;
-}
-
-/* Card Destaque dos Fundadores */
-.founders-spotlight-card {
-  background: #F8FAFD;
-  border: 1px solid var(--color-border-card);
-  border-radius: var(--radius-xl);
   overflow: hidden;
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  align-items: center;
-  box-shadow: var(--shadow-subtle);
+  box-shadow: var(--shadow-card);
 }
 
-.founders-img-wrap {
+.founders-bento-card .founders-img-wrap {
+  position: relative;
+  height: 280px;
   width: 100%;
-  height: 100%;
-  min-height: 320px;
 }
 
 .founders-photo {
@@ -1102,31 +1530,55 @@ button {
   object-fit: cover;
 }
 
-.founders-text-wrap {
-  padding: 36px 44px;
+.founders-img-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(6, 26, 59, 0.7) 100%);
+  pointer-events: none;
+}
+
+.founders-photo-pill {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  background: rgba(6, 26, 59, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.founders-bento-card .founders-text-wrap {
+  padding: 30px 28px;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  flex-grow: 1;
 }
 
 .founders-tag {
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 700;
-  text-transform: uppercase;
   color: var(--color-blue-royal);
-  letter-spacing: 0.06em;
 }
 
 .founders-title {
-  font-size: 1.55rem;
+  font-size: 1.45rem;
   font-weight: 700;
   color: var(--color-blue-night);
   line-height: 1.25;
 }
 
 .founders-desc {
-  font-size: 0.95rem;
-  color: var(--color-text-muted);
+  font-size: 0.94rem;
+  color: var(--color-text-body);
   line-height: 1.6;
 }
 
@@ -1134,21 +1586,117 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 6px;
+  margin-top: 8px;
 }
 
 .f-badge {
   background: #FFFFFF;
-  border: 1px solid var(--color-pastel-blue);
+  border: 1px solid var(--color-hairline);
   color: var(--color-blue-base);
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   font-weight: 600;
-  padding: 4px 12px;
+  padding: 5px 12px;
   border-radius: var(--radius-full);
 }
 
+/* Coluna de 4 Métricas Tabulares Empilhadas com Hairlines */
+.why-metrics-console {
+  background: #FFFFFF;
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-xl);
+  padding: 26px 24px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+}
+
+.why-console-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--color-hairline);
+  margin-bottom: 6px;
+}
+
+.why-console-title {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--color-blue-royal);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.why-metrics-list {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.why-metric-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--color-hairline);
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  transition: var(--transition-fast);
+}
+
+.why-metric-row:hover {
+  background: rgba(246, 249, 252, 0.6);
+  padding-left: 6px;
+}
+
+.why-metric-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.why-metric-lead {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.why-metric-num {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--color-blue-royal);
+  line-height: 1.1;
+  font-feature-settings: "tnum";
+}
+
+.why-metric-pill-tag {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-blue-base);
+  background: var(--color-ice-blue);
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+  width: fit-content;
+}
+
+.why-metric-heading {
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: var(--color-blue-night);
+  margin-bottom: 2px;
+}
+
+.why-metric-text {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  line-height: 1.42;
+}
+
 /* --------------------------------------------------------------------------
-   11. DOBRA 5: DEPOIMENTOS / PROVA SOCIAL (VÍDEOS DINÂMICOS CMS)
+   11. DOBRA 5: DEPOIMENTOS (EDITORIAL SOCIAL PROOF CARDS)
    -------------------------------------------------------------------------- */
 .testimonials-section {
   background: var(--color-page-bg);
@@ -1157,7 +1705,7 @@ button {
 .testimonials-video-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  gap: 24px;
 }
 
 .testimonial-card {
@@ -1177,11 +1725,46 @@ button {
   transform: translateY(-3px);
 }
 
+.clinical-record-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px;
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.record-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--color-blue-night);
+}
+
+.record-id {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--color-blue-royal);
+  background: var(--color-ice-blue);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.badge-dot-emerald {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-emerald);
+}
+
 .video-container {
   width: 100%;
   position: relative;
   padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-  background: #000000;
+  background: #061A3B;
+  cursor: pointer;
 }
 
 .video-container iframe {
@@ -1193,49 +1776,105 @@ button {
   border: none;
 }
 
+.video-play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(6, 26, 59, 0.3);
+  transition: var(--transition-fast);
+}
+
+.video-container:hover .video-play-overlay {
+  background: rgba(6, 26, 59, 0.15);
+}
+
+.play-btn-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--color-blue-royal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  transition: var(--transition-smooth);
+}
+
+.video-container:hover .play-btn-circle {
+  transform: scale(1.1);
+  background: #FFFFFF;
+}
+
 .testimonial-content {
-  padding: 24px;
+  padding: 20px 22px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
-.testimonial-stars {
-  color: #F59E0B;
-  font-size: 1.1rem;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-}
-
 .testimonial-quote {
-  font-size: 0.95rem;
-  color: var(--color-text-body);
-  font-style: italic;
+  font-size: 0.94rem;
+  color: var(--color-blue-night);
+  font-style: normal;
+  font-weight: 500;
   line-height: 1.55;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   flex-grow: 1;
 }
 
 .testimonial-patient-info {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid var(--color-border-subtle);
-  padding-top: 12px;
+  border-top: 1px solid var(--color-hairline);
+  padding-top: 10px;
 }
 
 .patient-name {
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 700;
   color: var(--color-blue-night);
 }
 
 .patient-case {
-  font-size: 0.76rem;
-  color: var(--color-neutral-gray);
+  font-size: 0.74rem;
+  color: var(--color-text-muted);
+}
+
+.testimonial-metrics-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: var(--color-page-bg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-hairline);
+}
+
+.record-metric-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.record-metric-label {
+  font-size: 0.68rem;
+  color: var(--color-text-muted);
+}
+
+.record-metric-value {
+  font-size: 0.78rem;
+  color: var(--color-blue-night);
+  font-weight: 700;
 }
 
 /* --------------------------------------------------------------------------
-   12. DOBRA 6: UNIDADE LOCAL & NOSSA EQUIPE (WIX CMS 100% DINÂMICO)
+   12. DOBRA 6: UNIDADE LOCAL & EQUIPE
    -------------------------------------------------------------------------- */
 .unit-details-section {
   background: #FFFFFF;
@@ -1244,21 +1883,21 @@ button {
 .unit-details-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 36px;
+  gap: 32px;
 }
 
 .unit-info-card, .unit-team-card {
-  background: #F8FAFD;
+  background: var(--color-page-bg);
   border: 1px solid var(--color-border-card);
   border-radius: var(--radius-xl);
-  padding: 36px 32px;
+  padding: 32px 28px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
 .unit-card-heading {
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--color-blue-night);
   border-bottom: 2px solid var(--color-ice-blue);
@@ -1278,12 +1917,12 @@ button {
 }
 
 .contact-icon-box {
-  font-size: 1.25rem;
   width: 38px;
   height: 38px;
   border-radius: 50%;
   background: #FFFFFF;
   border: 1px solid var(--color-pastel-blue);
+  color: var(--color-blue-royal);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1298,65 +1937,60 @@ button {
 .contact-label {
   font-size: 0.74rem;
   font-weight: 600;
-  color: var(--color-neutral-gray);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
 }
 
 .contact-value {
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: 0.88rem;
   color: var(--color-blue-night);
+  font-weight: 500;
   margin-top: 2px;
 }
 
 .btn-maps-outline {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--radius-full);
   background: #FFFFFF;
+  border: 1px solid var(--color-blue-royal);
   color: var(--color-blue-royal);
-  border: 1.5px solid var(--color-blue-royal);
-  padding: 11px 20px;
-  border-radius: var(--radius-md);
-  font-size: 0.88rem;
-  font-weight: 700;
+  font-size: 0.82rem;
+  font-weight: 600;
   transition: var(--transition-smooth);
+  width: fit-content;
 }
 
 .btn-maps-outline:hover {
   background: var(--color-blue-royal);
-  color: var(--color-white);
-  box-shadow: 0 4px 14px rgba(22, 99, 222, 0.25);
+  color: #FFFFFF;
 }
 
 .clinic-photo-wrapper {
-  margin-top: 10px;
-  border-radius: var(--radius-md);
+  margin-top: 4px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid var(--color-border-subtle);
-  background: #FFFFFF;
+  border: 1px solid var(--color-hairline);
+  position: relative;
 }
 
 .clinic-photo-img {
   width: 100%;
-  height: 200px;
+  height: 180px;
   object-fit: cover;
 }
 
 .clinic-photo-caption {
   display: block;
-  font-size: 0.74rem;
-  color: var(--color-neutral-gray);
-  padding: 8px 12px;
-  text-align: center;
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  padding: 6px 10px;
   background: #FFFFFF;
 }
 
-/* Equipe de Fisioterapeutas */
 .unit-team-intro {
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   color: var(--color-text-muted);
   line-height: 1.5;
 }
@@ -1364,42 +1998,36 @@ button {
 .team-cards-stack {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 .fisio-profile-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-lg);
+  padding: 16px;
   display: flex;
   align-items: center;
-  gap: 18px;
-  background: #FFFFFF;
-  border: 1px solid var(--color-border-card);
-  border-radius: var(--radius-md);
-  padding: 16px 20px;
-  transition: var(--transition-smooth);
-}
-
-.fisio-profile-card:hover {
-  border-color: var(--color-blue-royal);
+  gap: 16px;
   box-shadow: var(--shadow-subtle);
 }
 
 .fisio-photo-box {
-  width: 58px;
-  height: 58px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  overflow: hidden;
-  border: 2px solid var(--color-pastel-blue);
-  flex-shrink: 0;
   background: var(--color-ice-blue);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+  border: 2px solid #FFFFFF;
+  box-shadow: var(--shadow-subtle);
 }
 
 .fisio-avatar-img {
   width: 32px;
   height: 32px;
-  object-fit: contain;
 }
 
 .fisio-details {
@@ -1408,28 +2036,20 @@ button {
 }
 
 .fisio-badge-role {
-  font-size: 0.68rem;
-  font-weight: 700;
+  font-size: 0.7rem;
+  font-weight: 600;
   color: var(--color-blue-royal);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
 .fisio-name {
-  font-size: 1.05rem;
+  font-size: 0.88rem;
   font-weight: 700;
   color: var(--color-blue-night);
   margin-top: 2px;
 }
 
-.fisio-crefito {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--color-neutral-gray);
-}
-
 .fisio-specialty {
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   color: var(--color-text-muted);
   margin-top: 2px;
 }
@@ -1437,33 +2057,31 @@ button {
 .btn-team-cta {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 10px;
-  background: var(--color-primary-cta);
-  color: var(--color-white);
-  padding: 13px 22px;
-  border-radius: var(--radius-md);
-  font-size: 0.9rem;
+  background: var(--color-blue-royal);
+  color: #FFFFFF;
+  padding: 13px 20px;
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
   font-weight: 700;
-  box-shadow: var(--shadow-cta);
   transition: var(--transition-smooth);
-  margin-top: auto;
+  width: fit-content;
+  margin-top: 6px;
 }
 
 .btn-team-cta:hover {
-  background: var(--color-primary-cta-hover);
-  box-shadow: var(--shadow-cta-hover);
-  transform: translateY(-2px);
+  background: var(--color-blue-base);
+  transform: translateY(-1px);
 }
 
 .btn-team-cta .icon-wpp {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   fill: currentColor;
 }
 
 /* --------------------------------------------------------------------------
-   13. DOBRA 7: PERGUNTAS FREQUENTES (FAQ ACCORDION)
+   13. DOBRA 7: PERGUNTAS FREQUENTES (BORDERLESS HAIRLINE ACCORDION)
    -------------------------------------------------------------------------- */
 .faq-section {
   background: var(--color-page-bg);
@@ -1472,33 +2090,43 @@ button {
 .faq-accordion-wrap {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  background: transparent;
+  border-top: 1px solid var(--color-hairline);
+  box-shadow: none;
+  overflow: visible;
 }
 
 .faq-accordion-item {
-  background: #FFFFFF;
-  border: 1px solid var(--color-border-card);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  transition: var(--transition-smooth);
+  border-bottom: 1px solid var(--color-hairline);
+  transition: var(--transition-fast);
+  background: transparent;
+}
+
+.faq-accordion-item:last-child {
+  border-bottom: 1px solid var(--color-hairline);
 }
 
 .faq-accordion-item[open] {
-  border-color: var(--color-blue-royal);
-  box-shadow: var(--shadow-subtle);
+  background: rgba(229, 239, 255, 0.4);
+  border-radius: var(--radius-sm);
 }
 
 .faq-question {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 24px;
+  padding: 20px 8px;
   font-size: 1.05rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--color-blue-night);
   cursor: pointer;
   list-style: none;
   user-select: none;
+  transition: color var(--transition-fast);
+}
+
+.faq-question:hover {
+  color: var(--color-blue-royal);
 }
 
 .faq-question::-webkit-details-marker {
@@ -1506,21 +2134,21 @@ button {
 }
 
 .faq-icon-arrow {
-  font-size: 1.35rem;
-  font-weight: 700;
   color: var(--color-blue-royal);
-  transition: transform 0.25s ease;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+  margin-left: 12px;
 }
 
 .faq-accordion-item[open] .faq-icon-arrow {
-  transform: rotate(45deg);
+  transform: rotate(180deg);
 }
 
 .faq-answer {
-  padding: 0 24px 20px;
-  font-size: 0.94rem;
-  color: var(--color-text-muted);
-  line-height: 1.58;
+  padding: 0 8px 20px;
+  font-size: 0.95rem;
+  color: var(--color-text-body);
+  line-height: 1.65;
 }
 
 /* --------------------------------------------------------------------------
@@ -1553,15 +2181,33 @@ button {
 }
 
 .final-badge-pill {
-  background: rgba(255, 255, 255, 0.12);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
   color: #93C5FD;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  font-size: 0.72rem;
+  border: none;
+  font-size: 0.78rem;
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 0.08em;
-  padding: 5px 14px;
-  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  padding: 0;
+  border-radius: 0;
+  margin-bottom: 4px;
+}
+
+.final-badge-pill .kicker-index {
+  color: #FFFFFF;
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+}
+
+.final-badge-pill .kicker-dot {
+  color: var(--color-emerald);
+  font-weight: 900;
+  font-size: 1.15rem;
+  line-height: 1;
 }
 
 .final-cta-title {
@@ -1582,22 +2228,21 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  background: var(--color-blue-royal);
+  background: var(--color-primary-cta);
   color: var(--color-white);
   padding: 16px 34px;
   border-radius: var(--radius-full);
   font-size: 1.05rem;
   font-weight: 700;
-  box-shadow: 0 10px 25px -3px rgba(22, 99, 222, 0.5);
+  box-shadow: var(--shadow-cta);
   margin-top: 8px;
   transition: var(--transition-smooth);
 }
 
 .btn-final-primary:hover {
-  background: #FFFFFF;
-  color: var(--color-blue-night);
+  background: var(--color-primary-cta-hover);
   transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(255, 255, 255, 0.35);
+  box-shadow: var(--shadow-cta-hover);
 }
 
 .btn-final-primary .icon-wpp {
@@ -1614,6 +2259,12 @@ button {
   font-size: 0.8rem;
   color: #94A3B8;
   margin-top: 6px;
+}
+
+.guarantee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 /* Rodapé Institucional */
@@ -1743,7 +2394,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   15. MOBILE STICKY ACTION DOCK (AZUL ROYAL OFICIAL)
+   15. MOBILE STICKY ACTION DOCK (CRO MOBILE)
    -------------------------------------------------------------------------- */
 .mobile-sticky-dock {
   display: none;
@@ -1756,7 +2407,7 @@ button {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-top: 1px solid var(--color-ice-blue);
-  padding: 12px 18px calc(12px + env(safe-area-inset-bottom, 0px));
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
   box-shadow: 0 -8px 24px rgba(9, 41, 94, 0.08);
 }
 
@@ -1772,6 +2423,7 @@ button {
 .mobile-dock-unit-info {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .mobile-unit-title {
@@ -1781,12 +2433,12 @@ button {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 170px;
+  max-width: 165px;
 }
 
 .mobile-unit-hours {
   font-size: 0.68rem;
-  color: var(--color-neutral-gray);
+  color: var(--color-text-muted);
   font-weight: 500;
 }
 
@@ -1796,11 +2448,11 @@ button {
   gap: 8px;
   background: var(--color-primary-cta);
   color: var(--color-white);
-  padding: 11px 18px;
+  padding: 10px 16px;
   border-radius: var(--radius-full);
-  font-size: 0.84rem;
+  font-size: 0.82rem;
   font-weight: 700;
-  box-shadow: 0 4px 14px rgba(22, 99, 222, 0.35);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
   flex-shrink: 0;
   transition: var(--transition-smooth);
 }
@@ -1810,8 +2462,8 @@ button {
 }
 
 .mobile-dock-btn .icon-wpp {
-  width: 17px;
-  height: 17px;
+  width: 16px;
+  height: 16px;
   fill: currentColor;
 }
 
@@ -1823,18 +2475,25 @@ button {
   display: inline;
 }
 
+body.show-wix-tags {
+  overflow-x: hidden;
+}
+
 body.show-wix-tags .wix-field-marker::before {
   content: attr(data-wix-tag);
   background: #FEF08A;
   color: #854D0E;
   font-family: monospace;
-  font-size: 0.72em;
-  padding: 1px 5px;
+  font-size: 0.68em;
+  padding: 1px 4px;
   border-radius: 4px;
   border: 1px solid #CA8A04;
   margin-right: 4px;
   font-weight: 700;
   vertical-align: middle;
+  display: inline-block;
+  max-width: 100%;
+  word-break: break-all;
 }
 
 body.show-wix-tags .unit-dynamic-pill,
@@ -1844,7 +2503,7 @@ body.show-wix-tags .testimonial-card,
 body.show-wix-tags .contact-value,
 body.show-wix-tags .fisio-profile-card {
   outline: 2px dashed var(--color-blue-royal);
-  outline-offset: 3px;
+  outline-offset: 0;
 }
 
 /* --------------------------------------------------------------------------
@@ -1852,18 +2511,11 @@ body.show-wix-tags .fisio-profile-card {
    -------------------------------------------------------------------------- */
 @media (max-width: 1080px) {
   .hero-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 36px;
+    gap: 32px;
   }
 
   .visual-img-container {
-    height: 420px;
-  }
-
-  .floating-badge-authority {
-    left: -10px;
-    top: -16px;
-    padding: 10px 14px;
+    height: 320px;
   }
 
   .why-grid {
@@ -1885,6 +2537,14 @@ body.show-wix-tags .fisio-profile-card {
 }
 
 @media (max-width: 900px) {
+  .section-header-split {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    text-align: left;
+  }
+
   .hero-block {
     min-height: auto;
   }
@@ -1895,7 +2555,7 @@ body.show-wix-tags .fisio-profile-card {
 
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
   }
 
   .hero-copy-column {
@@ -1922,22 +2582,113 @@ body.show-wix-tags .fisio-profile-card {
   }
 
   .visual-canvas-card {
-    max-width: 560px;
+    max-width: 520px;
     margin: 0 auto;
+    width: 100%;
+    min-height: auto;
+    max-height: none;
+    height: auto;
   }
 
-  .floating-badge-authority {
-    left: 16px;
-    top: -16px;
+  .visual-img-container {
+    position: relative;
+    inset: auto;
+    height: 260px;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
   }
 
-  .phases-grid {
+  .clinical-gauge-card {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+    border-top: 1px solid var(--color-hairline);
+    padding: 14px 16px;
+  }
+
+  /* Dobra 2 Mobile */
+  .method-tracing-experience {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .method-console-column,
+  .phases-grid,
+  .phase-card,
+  .console-specs-grid {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .spec-pill-value {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .method-timeline-track-column {
+    position: static;
+  }
+
+  .method-vertical-stepper {
+    padding-left: 0;
+    flex-direction: row;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    gap: 8px;
+  }
+
+  .method-vertical-stepper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .timeline-vertical-rail {
+    display: none;
+  }
+
+  .timeline-step-btn {
+    padding: 10px 14px;
+    flex-shrink: 0;
+    width: auto;
+    gap: 10px;
+  }
+
+  .timeline-step-btn .step-meta .step-sub {
+    display: none;
+  }
+
+  .timeline-step-btn .step-meta .step-title {
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+
+  .timeline-step-btn .step-num-node {
+    width: 28px;
+    height: 28px;
+    font-size: 0.72rem;
+  }
+
+  /* Dobra 4 Mobile Bento */
+  .why-bento-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
 
-  .pathologies-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .why-metric-row {
+    grid-template-columns: 90px 1fr;
+    gap: 12px;
+  }
+
+  .pathology-tabpanel {
+    grid-template-columns: 1fr;
+    padding: 24px 20px;
+    gap: 24px;
   }
 
   .testimonials-video-grid {
@@ -1957,6 +2708,12 @@ body.show-wix-tags .fisio-profile-card {
 }
 
 @media (max-width: 768px) {
+  .hero-bg-accent {
+    width: 320px;
+    height: 320px;
+    right: -40px;
+  }
+
   .wix-cms-toolbar {
     display: none;
   }
@@ -1967,12 +2724,12 @@ body.show-wix-tags .fisio-profile-card {
   }
 
   .header-inner {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
 
   .brand-logo-img {
-    height: 32px;
+    height: 30px;
   }
 
   .header-vertical-divider {
@@ -1981,12 +2738,12 @@ body.show-wix-tags .fisio-profile-card {
 
   .unit-dynamic-pill {
     padding: 4px 10px;
-    font-size: 0.74rem;
-    max-width: 220px;
+    font-size: 0.72rem;
+    max-width: 200px;
   }
 
   .unit-dynamic-pill .unit-name-text {
-    max-width: 175px;
+    max-width: 160px;
   }
 
   .btn-header-cta {
@@ -1994,8 +2751,8 @@ body.show-wix-tags .fisio-profile-card {
   }
 
   .hero-block {
-    padding-top: 24px;
-    padding-bottom: 80px;
+    padding-top: 20px;
+    padding-bottom: 48px;
   }
 
   .hero-title {
@@ -2014,25 +2771,25 @@ body.show-wix-tags .fisio-profile-card {
   }
 
   .hero-guarantee-note {
-    font-size: 0.75rem;
+    font-size: 0.74rem;
     text-align: center;
     justify-content: center;
     flex-wrap: wrap;
   }
 
   .hero-metrics-strip {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 14px 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
     padding-top: 14px;
     margin-top: 8px;
+    width: 100%;
   }
 
   .metric-col {
     align-items: center;
     text-align: center;
-    min-width: 90px;
+    min-width: 0;
   }
 
   .metric-sep {
@@ -2040,15 +2797,34 @@ body.show-wix-tags .fisio-profile-card {
   }
 
   .metric-number {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
 
   .metric-label {
     font-size: 0.68rem;
   }
 
+  .visual-canvas-card {
+    min-height: auto;
+    max-height: none;
+    height: auto;
+  }
+
   .visual-img-container {
-    height: 320px;
+    position: relative;
+    inset: auto;
+    height: 200px;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  }
+
+  .clinical-gauge-card {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+    border-top: 1px solid var(--color-hairline);
+    padding: 14px 16px;
   }
 
   .photo-discrete-pill {
@@ -2056,32 +2832,39 @@ body.show-wix-tags .fisio-profile-card {
     padding: 4px 10px;
   }
 
-  .floating-badge-authority {
-    left: 12px;
-    top: -14px;
-    padding: 8px 12px;
+  .method-vertical-stepper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     gap: 8px;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+    padding-left: 0;
   }
 
-  .badge-seal-icon {
-    width: 32px;
-    height: 32px;
+  .method-vertical-stepper::-webkit-scrollbar {
+    display: none;
   }
 
-  .badge-stat-strong {
-    font-size: 0.96rem;
+  .timeline-step-btn {
+    padding: 8px 14px;
+    font-size: 0.74rem;
+    gap: 8px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    width: auto;
   }
 
-  .badge-stat-sub {
-    font-size: 0.6rem;
-  }
-
-  .pathologies-grid {
+  .why-bento-grid {
     grid-template-columns: 1fr;
   }
 
-  .why-grid {
-    grid-template-columns: 1fr;
+  .why-metric-row {
+    grid-template-columns: 80px 1fr;
+    gap: 12px;
   }
 
   .founders-text-wrap {
@@ -2095,5 +2878,80 @@ body.show-wix-tags .fisio-profile-card {
 
   .mobile-sticky-dock {
     display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .wix-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .kicker-context-extra {
+    display: none;
+  }
+
+  .hero-kicker-stack {
+    white-space: nowrap;
+    max-width: 100%;
+    font-size: 0.72rem;
+    padding: 5px 12px;
+    gap: 6px;
+    justify-content: center;
+  }
+
+  .telemetry-live-dot {
+    flex-shrink: 0;
+    min-width: 8px;
+    min-height: 8px;
+  }
+
+  .clinical-gauge-card {
+    padding: 14px;
+  }
+
+  .gauge-visual-row {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .gauge-footer-meta {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .pathologies-tablist {
+    justify-content: flex-start;
+  }
+
+  .unit-info-card,
+  .unit-team-card {
+    padding: 24px 16px;
+    gap: 16px;
+  }
+
+  .contact-item {
+    gap: 12px;
+  }
+
+  .contact-detail {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .contact-value {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .fisio-profile-card {
+    padding: 16px 12px;
+    gap: 12px;
+  }
+
+  .fisio-name {
+    word-break: break-word;
+    font-size: 0.88rem;
   }
 }
