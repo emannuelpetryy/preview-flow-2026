@@ -196,46 +196,33 @@ const fs = require('fs');
     // Volta para desktop para testes de interação
     await page.setViewport({ width: 1440, height: 900 });
 
-    // 7. Teste de Interatividade: Tracing Stepper / Timeline das 3 Fases
-    console.log('7. Testando Interatividade do Stepper do Método em 3 Fases...');
-    await page.click('#stepBtn2');
-    const step2Active = await page.evaluate(() => {
-      const btn2 = document.getElementById('stepBtn2');
-      const panel2 = document.getElementById('phasePanel2');
-      const line1 = document.getElementById('stepperLine1');
-      return btn2.classList.contains('active') && 
-             panel2.classList.contains('active') && 
-             line1 && line1.style.width === '100%';
+    // 7. Teste Estrutural: Grid Nativo 3 Colunas das 3 Fases (Wix Studio Ready, Zero Stepper/Timeline)
+    console.log('7. Validando Grid Nativo 3 Colunas do Método em 3 Fases...');
+    const methodAudit = await page.evaluate(() => {
+      const grid = document.getElementById('phasesGrid');
+      const cards = Array.from(document.querySelectorAll('#metodo .phase-card'));
+      const hasOldStepper = !!document.querySelector('.method-vertical-stepper') ||
+                            !!document.querySelector('.timeline-vertical-rail') ||
+                            !!document.querySelector('.console-progress-track');
+      const gridStyle = grid ? window.getComputedStyle(grid) : null;
+      const rects = cards.map(c => c.getBoundingClientRect());
+      const isThreeColumns = gridStyle && gridStyle.display === 'grid' && gridStyle.gridTemplateColumns.split(' ').length === 3;
+      const allSameRow = rects.length === 3 && Math.abs(rects[0].top - rects[1].top) < 10 && Math.abs(rects[1].top - rects[2].top) < 10;
+      return {
+        cardsCount: cards.length,
+        hasOldStepper,
+        isThreeColumns,
+        allSameRow
+      };
     });
-    if (!step2Active) throw new Error('Falha ao ativar Fase 2 via Stepper ou preencher linha 1');
-
-    await page.click('#stepBtn3');
-    const step3Active = await page.evaluate(() => {
-      const btn3 = document.getElementById('stepBtn3');
-      const panel3 = document.getElementById('phasePanel3');
-      const line1 = document.getElementById('stepperLine1');
-      const line2 = document.getElementById('stepperLine2');
-      return btn3.classList.contains('active') && 
-             panel3.classList.contains('active') && 
-             line1 && line1.style.width === '100%' && 
-             line2 && line2.style.width === '100%';
-    });
-    if (!step3Active) throw new Error('Falha ao ativar Fase 3 via Stepper ou preencher linhas 1 e 2');
-
-    // Teste de navegação por teclado no Stepper (ArrowLeft e ArrowRight)
-    await page.evaluate(() => {
-      const b3 = document.getElementById('stepBtn3');
-      b3.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowLeft', bubbles: true }));
-    });
-    const stepKeyNavActive = await page.evaluate(() => {
-      const b2 = document.getElementById('stepBtn2');
-      const p2 = document.getElementById('phasePanel2');
-      return b2.classList.contains('active') && p2.classList.contains('active');
-    });
-    if (!stepKeyNavActive) throw new Error('Falha na navegação por teclado no Stepper (ArrowLeft)');
-
-    await page.click('#stepBtn1');
-    console.log('Interatividade do Stepper das 3 Fases: 100% OK');
+    console.log('Auditoria do Grid de 3 Fases:', methodAudit);
+    if (methodAudit.hasOldStepper) {
+      throw new Error('VIOLAÇÃO: Stepper vertical, trilho ou barra de progresso antigos ainda estão presentes em #metodo.');
+    }
+    if (methodAudit.cardsCount !== 3 || !methodAudit.isThreeColumns || !methodAudit.allSameRow) {
+      throw new Error('Grid #metodo deve renderizar 3 cards lado a lado no desktop.');
+    }
+    console.log('Grid Nativo das 3 Fases: 100% OK');
 
     // 8. Teste de Interatividade: Fluid Tabs de Patologias
     console.log('8. Testando Interatividade das Abas Fluidas de Patologias...');
@@ -518,9 +505,9 @@ const fs = require('fs');
       const foundersCard = document.querySelector('.founders-bento-card');
       const metricsConsole = document.querySelector('.why-metrics-console');
 
-      // 5. Dobra 2 Tracing Timeline
-      const tracingExp = document.querySelector('.method-tracing-experience');
-      const tracingBeam = document.getElementById('tracingBeamIndicator');
+      // 5. Dobra 2 Grid Nativo 3 Colunas (100% Wix Studio Ready)
+      const methodGrid = document.querySelector('.method-three-col-grid');
+      const methodCards = document.querySelectorAll('#metodo .phase-card');
 
       // 6. Tokens de cor esmeralda e kicker-dot verde clínico
       const rootStyle = window.getComputedStyle(document.documentElement);
@@ -540,8 +527,8 @@ const fs = require('fs');
         hasBentoGrid: !!bentoGrid,
         hasFoundersCard: !!foundersCard,
         hasMetricsConsole: !!metricsConsole,
-        hasTracingExp: !!tracingExp,
-        hasTracingBeam: !!tracingBeam,
+        hasMethodGrid: !!methodGrid,
+        methodCardsCount: methodCards.length,
         hasEmeraldToken: emeraldToken.length > 0,
         totalKickerDots: kickerDots.length,
         greenKickerDotsCount: greenDots.length
@@ -560,8 +547,8 @@ const fs = require('fs');
     if (!seniorRedlineAudit.hasBentoGrid || !seniorRedlineAudit.hasFoundersCard || !seniorRedlineAudit.hasMetricsConsole) {
       throw new Error('Dobra 4 Bento Grid não estruturado conforme diretriz');
     }
-    if (!seniorRedlineAudit.hasTracingExp || !seniorRedlineAudit.hasTracingBeam) {
-      throw new Error('Dobra 2 Tracing Timeline não estruturada conforme diretriz');
+    if (!seniorRedlineAudit.hasMethodGrid || seniorRedlineAudit.methodCardsCount !== 3) {
+      throw new Error('Dobra 2 Grid Nativo de 3 Colunas não estruturado conforme diretriz');
     }
     if (!seniorRedlineAudit.hasEmeraldToken) {
       throw new Error('Token CSS --color-emerald não definido no :root');
@@ -570,22 +557,23 @@ const fs = require('fs');
       throw new Error(`Kicker dots sem cor verde clínica: ${seniorRedlineAudit.greenKickerDotsCount}/${seniorRedlineAudit.totalKickerDots}`);
     }
 
-    // 13.2 Auditoria de Sticky Scroll no Trilho da Dobra 2
-    const stickyCheck = await page.evaluate(() => {
-      const p2 = document.getElementById('phasePanel2');
-      if (!p2) return null;
-      p2.scrollIntoView({ behavior: 'instant', block: 'center' });
-      const track = document.querySelector('.method-timeline-track-column');
-      const rect = track.getBoundingClientRect();
+    // 13.2 Auditoria de Grid 3 Colunas Responsivo na Dobra 2 (Mobile empilha em 1 coluna sem overflow)
+    await page.setViewport({ width: 390, height: 844, isMobile: true });
+    const methodMobileCheck = await page.evaluate(() => {
+      const grid = document.querySelector('.method-three-col-grid');
+      const cards = Array.from(document.querySelectorAll('#metodo .phase-card'));
+      if (!grid || cards.length !== 3) return null;
+      const rects = cards.map(c => c.getBoundingClientRect());
       return {
-        top: rect.top,
-        isStickyActive: rect.top >= 50 && rect.top <= 140
+        stackedVertically: rects[0].bottom <= rects[1].top + 5 && rects[1].bottom <= rects[2].top + 5,
+        overflowsViewport: rects.some(r => r.right > 390.5)
       };
     });
-    console.log('Auditoria de Sticky Scroll Dobra 2:', stickyCheck);
-    if (stickyCheck && !stickyCheck.isStickyActive) {
-      throw new Error(`Falha no sticky scroll da Dobra 2: track.top = ${stickyCheck.top}px`);
+    console.log('Auditoria Mobile Dobra 2 (390px):', methodMobileCheck);
+    if (!methodMobileCheck || !methodMobileCheck.stackedVertically || methodMobileCheck.overflowsViewport) {
+      throw new Error(`Falha na responsividade mobile da Dobra 2: ${JSON.stringify(methodMobileCheck)}`);
     }
+    await page.setViewport({ width: 1440, height: 900 });
     await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
 
     // 14. Teste de Borda com Parâmetros Dinâmicos e Nome de Unidade Longo no Mobile

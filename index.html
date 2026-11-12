@@ -252,7 +252,8 @@
     </section>
 
     <!-- ==========================================================================
-         DOBRA 2: O MÉTODO EXCLUSIVO EM 3 FASES (TRACING TIMELINE & STEPPER)
+         DOBRA 2: O MÉTODO EXCLUSIVO EM 3 FASES (GRID / REPEATER NATIVO WIX STUDIO)
+         - 3 Colunas lado a lado sem JavaScript, sem stepper e sem timeline vertical
          ========================================================================== -->
     <section class="wix-section section-padding method-section" id="metodo" data-wix-block="metodo-3-fases">
       <div class="wix-container">
@@ -273,199 +274,122 @@
           </div>
         </div>
 
-        <!-- Tracing Timeline Interativa Assimétrica (Split Progressive Timeline / Sticky Console) -->
-        <div class="method-tracing-experience">
-
-          <!-- Coluna Esquerda: Trilho de Rastreamento Vertical com Tracing Beam Luminoso -->
-          <div class="method-timeline-track-column">
-            <div class="method-vertical-stepper" role="tablist" aria-label="Etapas do Protocolo de Tratamento">
-              
-              <!-- Trilho Físico com Tracing Beam -->
-              <div class="timeline-vertical-rail" aria-hidden="true">
-                <div class="timeline-rail-background"></div>
-                <div class="timeline-rail-beam" id="tracingBeamIndicator"></div>
-                <!-- Conectores compatíveis para checagem automatizada -->
-                <div class="stepper-connector-line" id="stepperLine1" style="display:none;"></div>
-                <div class="stepper-connector-line" id="stepperLine2" style="display:none;"></div>
+        <!-- Grid Nativo 3 Colunas (100% Wix Studio Ready) -->
+        <div class="phases-grid method-three-col-grid" id="phasesGrid" data-wix-component="Grid">
+          
+          <!-- Fase 01 -->
+          <article class="phase-card" id="phasePanel1" data-wix-component="Card">
+            <div class="console-card-header">
+              <div class="console-badge-wrap">
+                <span class="console-phase-badge">Fase 01</span>
+                <span class="console-status-live">Preparação Biomecânica</span>
               </div>
-
-              <!-- Etapa 1 -->
-              <button type="button" class="stepper-step-btn timeline-step-btn active" role="tab" id="stepBtn1" data-phase-num="1" aria-controls="phasePanel1" aria-selected="true" tabindex="0" onclick="activateMethodPhase(1, true)" onkeydown="handleStepperKeydown(event, 1)">
-                <div class="step-num-node">
-                  <span class="step-num">01</span>
-                </div>
-                <div class="step-meta">
-                  <span class="step-title">Ajuste Biomecânico</span>
-                  <span class="step-sub">Alinhamento articular e desativação mecânica</span>
-                </div>
-              </button>
-
-              <!-- Etapa 2 -->
-              <button type="button" class="stepper-step-btn timeline-step-btn" role="tab" id="stepBtn2" data-phase-num="2" aria-controls="phasePanel2" aria-selected="false" tabindex="-1" onclick="activateMethodPhase(2, true)" onkeydown="handleStepperKeydown(event, 2)">
-                <div class="step-num-node">
-                  <span class="step-num">02</span>
-                </div>
-                <div class="step-meta">
-                  <span class="step-title">Descompressão Dinâmica</span>
-                  <span class="step-sub">Pressão negativa e vácuo discal computadorizado</span>
-                </div>
-              </button>
-
-              <!-- Etapa 3 -->
-              <button type="button" class="stepper-step-btn timeline-step-btn" role="tab" id="stepBtn3" data-phase-num="3" aria-controls="phasePanel3" aria-selected="false" tabindex="-1" onclick="activateMethodPhase(3, true)" onkeydown="handleStepperKeydown(event, 3)">
-                <div class="step-num-node">
-                  <span class="step-num">03</span>
-                </div>
-                <div class="step-meta">
-                  <span class="step-title">Estabilização Muscular</span>
-                  <span class="step-sub">Blindagem dos multífidos e sustentação ativa</span>
-                </div>
-              </button>
-
+              <div class="phase-icon-wrap">
+                <img src="./assets/icons/body-back.svg" alt="Ajuste Biomecânico" width="28" height="28" class="phase-icon">
+              </div>
             </div>
-          </div>
 
-          <!-- Coluna Direita: Console Clínico da Fase Ativa -->
-          <div class="method-console-column">
-            <div class="phases-grid tracing-timeline-container" id="phasesGrid">
-              
-              <!-- Fase 1 Console -->
-              <article class="phase-card active" id="phasePanel1" role="tabpanel" aria-labelledby="stepBtn1" tabindex="0">
-                <div class="console-card-header">
-                  <div class="console-badge-wrap">
-                    <span class="console-phase-badge">Etapa 01 de 03</span>
-                    <span class="console-status-live">Preparação Biomecânica</span>
-                  </div>
-                  <div class="phase-icon-wrap">
-                    <img src="./assets/icons/body-back.svg" alt="Ajuste Biomecânico" width="32" height="32" class="phase-icon">
-                  </div>
+            <div class="console-body">
+              <h3 class="phase-title">Ajuste Biomecânico e Liberação Miofascial</h3>
+              <p class="phase-desc">
+                Técnicas manuais avançadas e mobilização articular precisa para restaurar o alinhamento vertebral e reduzir sobrecargas sobre os discos.
+              </p>
+
+              <div class="console-specs-grid">
+                <div class="spec-item">
+                  <span class="spec-label">Objetivo Biomecânico</span>
+                  <strong class="spec-value">Alinhamento articular e desativação mecânica</strong>
                 </div>
-
-                <div class="console-body">
-                  <h3 class="phase-title">Ajuste Biomecânico e Liberação Miofascial</h3>
-                  <p class="phase-desc">
-                    Técnicas manuais avançadas e mobilização articular precisa para restaurar o alinhamento das vértebras e desativar sobrecargas que comprimem os discos.
-                  </p>
-
-                  <div class="console-specs-grid">
-                    <div class="spec-item">
-                      <span class="spec-label">Objetivo Biomecânico</span>
-                      <strong class="spec-value">Alinhamento articular e desativação mecânica de sobrecargas</strong>
-                    </div>
-                    <div class="spec-item">
-                      <span class="spec-label">Mecanismo de Ação</span>
-                      <strong class="spec-value">Descompressão miofascial e liberação dos tecidos periarticulares</strong>
-                    </div>
-                    <div class="spec-item">
-                      <span class="spec-label">Indicador de Resposta Clínica</span>
-                      <div class="spec-pill-value">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                        <span>Alívio progressivo de sobrecargas articulares e ganho de mobilidade</span>
-                      </div>
-                    </div>
-                  </div>
+                <div class="spec-item">
+                  <span class="spec-label">Mecanismo de Ação</span>
+                  <strong class="spec-value">Liberação miofascial dos tecidos periarticulares</strong>
                 </div>
-
-                <div class="console-footer">
-                  <div class="console-progress-track">
-                    <div class="console-progress-fill" style="width: 33.3%;"></div>
-                  </div>
-                  <span class="console-progress-text">Fase 1: 33% do protocolo de reabilitação concluído</span>
-                </div>
-              </article>
-
-              <!-- Fase 2 Console (Protagonista Tecnológico) -->
-              <article class="phase-card phase-card-highlight" id="phasePanel2" role="tabpanel" aria-labelledby="stepBtn2" tabindex="0">
-                <div class="console-card-header">
-                  <div class="console-badge-wrap">
-                    <span class="console-phase-badge highlight">Etapa 02 de 03</span>
-                    <span class="console-status-live highlight">Tecnologia Patenteada Protagonista</span>
-                  </div>
-                  <div class="phase-icon-wrap highlight">
-                    <img src="./assets/icons/spine.svg" alt="Descompressão do Disco" width="32" height="32" class="phase-icon">
-                  </div>
-                </div>
-
-                <div class="console-body">
-                  <h3 class="phase-title">Descompressão Dinâmica Computadorizada</h3>
-                  <p class="phase-desc">
-                    Maca de tração computadorizada com força milimétrica controlada que afasta as vértebras sem dor, criando vácuo hidrostático que recolhe a protuberância e reidrata o tecido discal.
-                  </p>
-
-                  <div class="console-specs-grid">
-                    <div class="spec-item">
-                      <span class="spec-label">Objetivo Biomecânico</span>
-                      <strong class="spec-value">Pressão negativa e vácuo discal computadorizado</strong>
-                    </div>
-                    <div class="spec-item">
-                      <span class="spec-label">Mecanismo de Ação</span>
-                      <strong class="spec-value">Afastamento vertebral computadorizado com ajuste micrométrico</strong>
-                    </div>
-                    <div class="spec-item">
-                      <span class="spec-label">Indicador de Resposta Clínica</span>
-                      <div class="spec-pill-value highlight">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                        <span>Redução da pressão intradiscal e recolhimento mecânico</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="console-footer">
-                  <div class="console-progress-track">
-                    <div class="console-progress-fill highlight" style="width: 66.6%;"></div>
-                  </div>
-                  <span class="console-progress-text">Fase 2: 66% do protocolo concluído (núcleo tecnológico)</span>
-                </div>
-              </article>
-
-              <!-- Fase 3 Console -->
-              <article class="phase-card" id="phasePanel3" role="tabpanel" aria-labelledby="stepBtn3" tabindex="0">
-                <div class="console-card-header">
-                  <div class="console-badge-wrap">
-                    <span class="console-phase-badge">Etapa 03 de 03</span>
-                    <span class="console-status-live">Blindagem e Estabilização</span>
-                  </div>
-                  <div class="phase-icon-wrap">
-                    <img src="./assets/icons/shield-check.svg" alt="Fortalecimento e Estabilização" width="32" height="32" class="phase-icon">
-                  </div>
-                </div>
-
-                <div class="console-body">
-                  <h3 class="phase-title">Estabilização Muscular e Blindagem</h3>
-                  <p class="phase-desc">
-                    Exercícios terapêuticos específicos com foco nos multífidos, transverso e musculatura profunda para blindar a coluna e prevenir o retorno de recidivas.
-                  </p>
-
-                  <div class="console-specs-grid">
-                    <div class="spec-item">
-                      <span class="spec-label">Objetivo Biomecânico</span>
-                      <strong class="spec-value">Blindagem muscular dos multífidos e sustentação ativa</strong>
-                    </div>
-                    <div class="spec-item">
-                      <span class="spec-label">Mecanismo de Ação</span>
-                      <strong class="spec-value">Ativação isométrica e recrutamento seletivo de estabilizadores profundos</strong>
-                    </div>
-                    <div class="spec-item">
-                      <span class="spec-label">Indicador de Resposta Clínica</span>
-                      <div class="spec-pill-value">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                        <span>Estabilização funcional duradoura e retorno seguro à rotina</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="console-footer">
-                  <div class="console-progress-track">
-                    <div class="console-progress-fill" style="width: 100%;"></div>
-                  </div>
-                  <span class="console-progress-text">Fase 3: 100% do protocolo concluído com estabilização funcional</span>
-                </div>
-              </article>
-
+              </div>
             </div>
-          </div>
+
+            <div class="console-footer">
+              <div class="spec-pill-value">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Alívio progressivo e ganho de mobilidade</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Fase 02 (Destaque Tecnológico Central) -->
+          <article class="phase-card phase-card-highlight" id="phasePanel2" data-wix-component="Card">
+            <div class="console-card-header">
+              <div class="console-badge-wrap">
+                <span class="console-phase-badge highlight">Fase 02</span>
+                <span class="console-status-live highlight">Tecnologia Protagonista</span>
+              </div>
+              <div class="phase-icon-wrap highlight">
+                <img src="./assets/icons/spine.svg" alt="Descompressão do Disco" width="28" height="28" class="phase-icon">
+              </div>
+            </div>
+
+            <div class="console-body">
+              <h3 class="phase-title">Descompressão Dinâmica Computadorizada</h3>
+              <p class="phase-desc">
+                Maca computadorizada com tração milimétrica controlada que afasta as vértebras sem dor, criando vácuo hidrostático para reidratar o disco.
+              </p>
+
+              <div class="console-specs-grid">
+                <div class="spec-item">
+                  <span class="spec-label">Objetivo Biomecânico</span>
+                  <strong class="spec-value">Pressão negativa e vácuo discal computadorizado</strong>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Mecanismo de Ação</span>
+                  <strong class="spec-value">Afastamento vertebral com ajuste micrométrico</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="console-footer">
+              <div class="spec-pill-value highlight">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Redução da pressão intradiscal</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Fase 03 -->
+          <article class="phase-card" id="phasePanel3" data-wix-component="Card">
+            <div class="console-card-header">
+              <div class="console-badge-wrap">
+                <span class="console-phase-badge">Fase 03</span>
+                <span class="console-status-live">Blindagem Funcional</span>
+              </div>
+              <div class="phase-icon-wrap">
+                <img src="./assets/icons/shield-check.svg" alt="Fortalecimento e Estabilização" width="28" height="28" class="phase-icon">
+              </div>
+            </div>
+
+            <div class="console-body">
+              <h3 class="phase-title">Estabilização Muscular e Blindagem</h3>
+              <p class="phase-desc">
+                Exercícios terapêuticos direcionados aos músculos profundos da coluna para sustentar os segmentos tratados e prevenir recidivas.
+              </p>
+
+              <div class="console-specs-grid">
+                <div class="spec-item">
+                  <span class="spec-label">Objetivo Biomecânico</span>
+                  <strong class="spec-value">Fortalecimento dos multífidos e sustentação ativa</strong>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Mecanismo de Ação</span>
+                  <strong class="spec-value">Recrutamento seletivo de estabilizadores profundos</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="console-footer">
+              <div class="spec-pill-value">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Estabilização duradoura e retorno seguro</span>
+              </div>
+            </div>
+          </article>
 
         </div>
 
@@ -1660,114 +1584,6 @@
       
       container.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" title="${title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"></iframe>`;
     }
-
-    /**
-     * Seletor de Etapas do Método (Interactive Stepper & Tracing Timeline)
-     */
-    let isUserClickingStepper = false;
-
-    function activateMethodPhase(phaseNum, shouldScroll) {
-      document.querySelectorAll('.stepper-step-btn').forEach((btn, idx) => {
-        const isActive = (idx + 1) === phaseNum;
-        btn.classList.toggle('active', isActive);
-        btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
-        btn.tabIndex = isActive ? 0 : -1;
-        if (isActive) {
-          btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-        }
-      });
-
-      document.querySelectorAll('.phase-card').forEach((card, idx) => {
-        const isActive = (idx + 1) === phaseNum;
-        card.classList.toggle('active', isActive);
-      });
-
-      // Atualiza o feixe luminoso vertical (Tracing Beam Luminoso #1663DE -> #10B981)
-      const beam = document.getElementById('tracingBeamIndicator');
-      if (beam) {
-        if (phaseNum === 1) beam.style.height = '28%';
-        else if (phaseNum === 2) beam.style.height = '64%';
-        else beam.style.height = '100%';
-      }
-
-      // Conectores compatíveis para verificação automatizada
-      const line1 = document.getElementById('stepperLine1');
-      const line2 = document.getElementById('stepperLine2');
-      if (line1) {
-        line1.style.width = phaseNum >= 2 ? '100%' : '0%';
-        line1.style.height = phaseNum >= 2 ? '100%' : '0%';
-      }
-      if (line2) {
-        line2.style.width = phaseNum >= 3 ? '100%' : '0%';
-        line2.style.height = phaseNum >= 3 ? '100%' : '0%';
-      }
-
-      if (shouldScroll) {
-        const targetCard = document.getElementById(`phasePanel${phaseNum}`);
-        if (targetCard) {
-          isUserClickingStepper = true;
-          targetCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-          setTimeout(() => { isUserClickingStepper = false; }, 800);
-        }
-      }
-    }
-
-    function handleStepperKeydown(e, currentNum) {
-      let targetNum = null;
-      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-        e.preventDefault();
-        targetNum = currentNum === 3 ? 1 : currentNum + 1;
-      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-        e.preventDefault();
-        targetNum = currentNum === 1 ? 3 : currentNum - 1;
-      } else if (e.key === 'Home') {
-        e.preventDefault();
-        targetNum = 1;
-      } else if (e.key === 'End') {
-        e.preventDefault();
-        targetNum = 3;
-      }
-
-      if (targetNum !== null) {
-        const nextBtn = document.getElementById(`stepBtn${targetNum}`);
-        if (nextBtn) {
-          nextBtn.focus();
-          activateMethodPhase(targetNum, true);
-        }
-      }
-    }
-
-    /**
-     * Sincronização automática via IntersectionObserver na rolagem da página
-     */
-    (function initMethodScrollObserver() {
-      if (!('IntersectionObserver' in window)) return;
-      const cards = [
-        document.getElementById('phasePanel1'),
-        document.getElementById('phasePanel2'),
-        document.getElementById('phasePanel3')
-      ].filter(Boolean);
-
-      if (cards.length === 0) return;
-
-      const observer = new IntersectionObserver((entries) => {
-        if (isUserClickingStepper) return;
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const id = entry.target.id;
-            const phaseNum = parseInt(id.replace('phasePanel', ''), 10);
-            if (!isNaN(phaseNum)) {
-              activateMethodPhase(phaseNum, false);
-            }
-          }
-        });
-      }, {
-        threshold: 0.5,
-        rootMargin: '-10% 0px -10% 0px'
-      });
-
-      cards.forEach(card => observer.observe(card));
-    })();
 
     /**
      * Seletor em Abas Fluidas de Patologias com Suporte a Teclado e Scroller
